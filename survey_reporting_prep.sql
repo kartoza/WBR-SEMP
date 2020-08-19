@@ -2,7 +2,7 @@
 set search_path to wbr_survey;
 
 --drop view wbr_report;
-create or replace view wbr_report as
+create materialized view wbr_report as
 select 
 wbr.fid,
     --geometry,
@@ -177,5 +177,5 @@ left join weather_prediction_valuemap av on wbr.weather_prediction = av.id
 left join who_fetches_water_valuemap aw on wbr.who_fetches_water = aw.id
 left join years_without_water_valuemap ax on wbr.years_without_water = ax.id
 ;
-	
+GRANT SELECT ON TABLE wbr_survey.wbr_report TO readonly;	
 	
