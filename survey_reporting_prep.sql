@@ -1,68 +1,70 @@
 --preparing survey table for reporting
 set search_path to wbr_survey;
 
---drop view wbr_report;
+--REFRESH MATERIALIZED VIEW wbr_report;
+
+--drop materialized view wbr_report;
 create materialized view wbr_report as
 select 
 wbr.fid,
-    --geometry,
+    geometry,
     gt.type as gender,
     disability,
     msl.marital_status,
     acl.highest_academic_level,
     rgl.race_group,
-    ab.description relation_head_household,
+    ae.description relation_head_household,
     esl.employment_status,
-    total_income,
+    til.total_income,
     same_income_monthly,
     other_source_income,
     sil.type_source_income,
-    p.description main_source_water,
-    ak.description use_of_water,
-    at.description water_source_location,
+    q.description main_source_water,
+    am.description use_of_water,
+    au.description water_source_location,
     time_taken,
-    aw.description as who_fetches_water,
-    r.description method_recieve_water,
-    ar.description water_shortage,
+    ax.description as who_fetches_water,
+    s.description method_recieve_water,
+    at.description water_shortage,
     smell_of_water,
     taste_of_water,
     b.description colour_of_water,
-    m.description is_water_cleaned,
+    n.description is_water_cleaned,
     water_bill,
     water_bill_accurate,
     ae.description sharing_water,
-    aj.description toilet_facility,
-    ad.description share_with_nonmembers,
-    ai.description toilet_facility_location,
-    am.description washing_of_hands,
+    al.description toilet_facility,
+    ag.description share_with_nonmembers,
+    ak.description toilet_facility_location,
+    ao.description washing_of_hands,
     presence_of_water,
-    y.description presence_of_soap,
-    q.description maintain_water_source,
-    c.description cook_appliance,
-    ag.description stove_with_chimmney,
-    ac.description room_for_cook,
-    j.description heat_for_home,
-    o.description light_for_home,
-    f.description electronic_appliance,
+    aa.description presence_of_soap,
+    r.description maintain_water_source,
+    d.description cook_appliance,
+    ai.description stove_with_chimmney,
+    af.description room_for_cook,
+    k.description heat_for_home,
+    p.description light_for_home,
+    g.description electronic_appliance,
     farm_animals,
     land_ownership,
-    k.description hectares_land_own,
-    al.description vegetable_garden,
+    l.description hectares_land_own,
+    an.description vegetable_garden,
     farmer,
-    h.description farm_entity,
-    g.description farm_decisions,
-    n.description land_tenure_type,
+    i.description farm_entity,
+    h.description farm_decisions,
+    o.description land_tenure_type,
     temperature_shifts,
-    d.description cool_or_warm,
-    aa.description rainfall_shifts,
-    e.description dry_or_wet,
-    x.description plant_season_shifts,
+    e.description cool_or_warm,
+    ac.description rainfall_shifts,
+    f.description dry_or_wet,
+    z.description plant_season_shifts,
     a.description adjust_to_shifts,
-    av.description weather_prediction,
+    aw.description weather_prediction,
     recieve_advise,
-    v.description organisation_advise,
-    au.description water_source_used,
-    l.description irrigation_source,
+    x.description organisation_advise,
+    av.description water_source_used,
+    m.description irrigation_source,
     image,
     notes,
     timestamp,
@@ -71,20 +73,20 @@ wbr.fid,
     total_in_household,
     years_lived_village,
     members_employed,
-    an.description water_access_improved,
+    ap.description water_access_improved,
     bill_water_amount,
-    ao.description water_animals,
+    aq.description water_animals,
     other_disability,
     other_relationship,
     number_male_adults,
     number_female_adults,
     number_male_children,
     number_female_children,
-    ax.description years_without_water,
-    ap.description water_cleaning_methods,
+    ay.description years_without_water,
+    ar.description water_cleaning_methods,
     number_sharing_water,
-    u.description number_sharing_toilet,
-    w.description other_room_cook,
+    w.description number_sharing_toilet,
+    y.description other_room_cook,
     other_specific_room,
     other_heating,
     other_lighting,
@@ -94,17 +96,17 @@ wbr.fid,
     number_horse_donkey_mule,
     number_shoats,
     number_chicken_poultry,
-    t.description no_garden,
+    u.description no_garden,
     farming_years,
     other_tenure,
     other_prediction_forms,
     other_organisation_advise,
     other_irrigation_source,
-    radio,
-    television,
-    non_mobile_telephone,
-    computer,
-    refrigerator,
+    ab.description radio,
+    aj.description television,
+    v.description non_mobile_telephone,
+    c.description computer,
+    ad.description refrigerator,
     other_cook_appliance,
     water_observation,
     detergent_observation,
@@ -112,9 +114,9 @@ wbr.fid,
     crop_irrigation,
     address,
     receive_water_bill,
-    i.description garden_location,
+    j.description garden_location,
     water_for_garden,
-    s.description method_watering
+    t.description method_watering
     --surveyor
 from sync_main.wbr 
 --lookups
@@ -126,56 +128,58 @@ left join sync_main.marital_status_lookup msl on wbr.marital_status = msl.fid
 left join sync_main.race_group_lookup rgl on wbr.race_group = rgl.fid
 left join sync_main.source_income_lookup sil on wbr.type_source_income = sil.fid
 left join sync_main.surveyor_lookup sl on wbr.edit_by::integer = sl.fid
+left join sync_main.total_income_lookup til on wbr.total_income = til.fid
 --value maps
 left join adjust_to_shifts_valuemap a on wbr.adjust_to_shifts = a.id
 left join colour_of_water_valuemap b on wbr.colour_of_water = b.id
-left join cook_appliance_valuemap c on wbr.cook_appliance = c.id
-left join cool_or_warm_valuemap d on wbr.cool_or_warm = d.id
-left join dry_or_wet_valuemap e on wbr.dry_or_wet = e.id
-left join electronic_appliance_valuemap f on wbr.electronic_appliance = f.id
-left join farm_decisions_valuemap g on wbr.farm_decisions = g.id
-left join farm_entity_valuemap h on wbr.farm_entity = h.id
-left join garden_location_valuemap i on wbr.garden_location = i.id
-left join heat_for_home_valuemap j on wbr.heat_for_home = j.id
-left join hectares_land_own_valuemap k on wbr.hectares_land_own = k.id
-left join irrigation_source_valuemap l on wbr.irrigation_source = l.id
-left join is_water_cleaned_valuemap m on wbr.is_water_cleaned = m.id
-left join land_tenure_type_valuemap n on wbr.land_tenure_type = n.id
-left join light_for_home_valuemap o on wbr.light_for_home = o.id
-left join main_source_water_valuemap p on wbr.main_source_water = p.id
-left join maintain_water_source_valuemap q on wbr.maintain_water_source = q.id
-left join method_recieve_water_valuemap r on wbr.method_recieve_water = r.id
-left join method_watering_valuemap s on wbr.method_watering = s.id
-left join no_garden_valuemap t on wbr.no_garden = t.id
-left join number_sharing_toilet_valuemap u on wbr.number_sharing_toilet = u.id
-left join organisation_advise_valuemap v on wbr.organisation_advise = v.id
-left join other_room_cook_valuemap w on wbr.other_room_cook = w.id
-left join plant_season_shifts_valuemap x on wbr.plant_season_shifts = x.id
-left join presence_of_soap_valuemap y on wbr.presence_of_soap = y.id
---left join presence_of_water_valuemap z on wbr.presence_of_water = z.id
-left join rainfall_shifts_valuemap aa on wbr.rainfall_shifts = aa.id
-left join relation_head_household_valuemap ab on wbr.relation_head_household = ab.id
-left join room_for_cook_valuemap ac on wbr.room_for_cook = ac.id
-left join share_with_nonmembers_valuemap ad on wbr.share_with_nonmembers = ad.id
-left join sharing_water_valuemap ae on wbr.sharing_water = ae.id
---left join smell_of_water_valuemap af on wbr.smell_of_water = af.id
-left join stove_with_chimmney_valuemap ag on wbr.stove_with_chimmney = ag.id
---left join taste_of_water_valuemap ah on wbr.taste_of_water = ah.id
-left join toilet_facility_location_valuemap ai on wbr.toilet_facility_location = ai.id
-left join toilet_facility_valuemap aj on wbr.toilet_facility = aj.id
-left join use_of_water_valuemap ak on wbr.use_of_water = ak.id
-left join vegetable_garden_valuemap al on wbr.vegetable_garden = al.id
-left join washing_of_hands_valuemap am on wbr.washing_of_hands = am.id
-left join water_access_improved_valuemap an on wbr.water_access_improved = an.id
-left join water_animals_valuemap ao on wbr.water_animals = ao.id
-left join water_cleaning_methods_valuemap ap on wbr.water_cleaning_methods = ap.id
---left join water_for_garden_valuemap aq on wbr.water_for_garden = aq.id
-left join water_shortage_valuemap ar on wbr.water_shortage = ar.id
-left join water_source_location_valuemap at on wbr.water_source_location = at.id
-left join water_source_used_valuemap au on wbr.water_source_used = au.id
-left join weather_prediction_valuemap av on wbr.weather_prediction = av.id
-left join who_fetches_water_valuemap aw on wbr.who_fetches_water = aw.id
-left join years_without_water_valuemap ax on wbr.years_without_water = ax.id
+left join computer_valuemap c on wbr.computer = c.id
+left join cook_appliance_valuemap d on wbr.cook_appliance = d.id
+left join cool_or_warm_valuemap e on wbr.cool_or_warm = e.id
+left join dry_or_wet_valuemap f on wbr.dry_or_wet = f.id
+left join electronic_appliance_valuemap g on wbr.electronic_appliance = g.id
+left join farm_decisions_valuemap h on wbr.farm_decisions = h.id
+left join farm_entity_valuemap i on wbr.farm_entity = i.id
+left join garden_location_valuemap j on wbr.garden_location = j.id
+left join heat_for_home_valuemap k on wbr.heat_for_home = k.id
+left join hectares_land_own_valuemap l on wbr.hectares_land_own = l.id
+left join irrigation_source_valuemap m on wbr.irrigation_source = m.id
+left join is_water_cleaned_valuemap n on wbr.is_water_cleaned = n.id
+left join land_tenure_type_valuemap o on wbr.land_tenure_type = o.id
+left join light_for_home_valuemap p on wbr.light_for_home = p.id
+left join main_source_water_valuemap q on wbr.main_source_water = q.id
+left join maintain_water_source_valuemap r on wbr.maintain_water_source = r.id
+left join method_recieve_water_valuemap s on wbr.method_recieve_water = s.id
+left join method_watering_valuemap t on wbr.method_watering = t.id
+left join no_garden_valuemap u on wbr.no_garden = u.id
+left join non_mobile_telephone_valuemap v on wbr.non_mobile_telephone = v.id
+left join number_sharing_toilet_valuemap w on wbr.number_sharing_toilet = w.id
+left join organisation_advise_valuemap x on wbr.organisation_advise = x.id
+left join other_room_cook_valuemap y on wbr.other_room_cook = y.id
+left join plant_season_shifts_valuemap z on wbr.plant_season_shifts = z.id
+left join presence_of_soap_valuemap aa on wbr.presence_of_soap = aa.id
+left join radio_valuemap ab on wbr.radio = ab.id
+left join rainfall_shifts_valuemap ac on wbr.rainfall_shifts = ac.id
+left join refrigerator_valuemap ad on wbr.refrigerator = ad.id
+left join relation_head_household_valuemap ae on wbr.relation_head_household = ae.id
+left join room_for_cook_valuemap af on wbr.room_for_cook = af.id
+left join share_with_nonmembers_valuemap ag on wbr.share_with_nonmembers = ag.id
+left join sharing_water_valuemap ah on wbr.sharing_water = ah.id
+left join stove_with_chimmney_valuemap ai on wbr.stove_with_chimmney = ai.id
+left join television_valuemap aj on wbr.television = aj.id
+left join toilet_facility_location_valuemap ak on wbr.toilet_facility_location = ak.id
+left join toilet_facility_valuemap al on wbr.toilet_facility = al.id
+left join use_of_water_valuemap am on wbr.use_of_water = am.id
+left join vegetable_garden_valuemap an on wbr.vegetable_garden = an.id
+left join washing_of_hands_valuemap ao on wbr.washing_of_hands = ao.id
+left join water_access_improved_valuemap ap on wbr.water_access_improved = ap.id
+left join water_animals_valuemap aq on wbr.water_animals = aq.id
+left join water_cleaning_methods_valuemap ar on wbr.water_cleaning_methods = ar.id
+left join water_shortage_valuemap at on wbr.water_shortage = at.id
+left join water_source_location_valuemap au on wbr.water_source_location = au.id
+left join water_source_used_valuemap av on wbr.water_source_used = av.id
+left join weather_prediction_valuemap aw on wbr.weather_prediction = aw.id
+left join who_fetches_water_valuemap ax on wbr.who_fetches_water = ax.id
+left join years_without_water_valuemap ay on wbr.years_without_water = ay.id
 ;
+
 GRANT SELECT ON TABLE wbr_survey.wbr_report TO readonly;	
-	
