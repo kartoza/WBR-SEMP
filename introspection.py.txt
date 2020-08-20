@@ -1,0 +1,67 @@
+"""
+loop through QGIS layers and list some properties for introspection
+helps to audit available data and identify possible underlying issues
+and it's easy to add additional attributes from layers to the output
+
+designed to be copy pasted into the python console within a QGIS project
+"""
+
+# if you want to run from pyhon directly, you must first import the relevant libraries.
+# from the QGIS pyhon console, you will need to import system libraries where needed (e.g. import os)
+
+layers = [layer for layer in QgsProject.instance().mapLayers().values()]  # Get a list of all map layers
+# layers = QgsProject.instance().mapLayersByName('layer_name')  # get a layers by name
+# layer = layers[0]  # get the first object in the layers list
+# layer = iface.activeLayer()  # get currently active layer (last selected if multiple)
+
+# To list available attributes and methods, you can use the python dir command
+# layer.__dir__()  # same as dir(layer)
+# for i in layer.__dir__():
+#     print(i)
+# careful though, as there are over 500 for qgis layers
+# alternatively use the api docs at https://qgis.org/pyqgis
+
+"""
+itemCalc fields are added for placeholding expected spreadsheet formula.
+this is expected to be manual as there may exist a variety of data sources
+assuming default configuration and column settings, the following should apply:
+
+serviceCalc: =MID(LEFT(E2,FIND("' sslmode",E2)),FIND("service='",E2), LEN(E2))
+if there's an error, you can try =MID(LEFT(E2,FIND("' key",E2)),FIND("service='",E2), LEN(E2))
+
+tableCalc: =MID(LEFT(E2,FIND(" (",E2)-1),FIND("table=",E2), LEN(E2))
+geomCalc: =MID(LEFT(E2,FIND(")",E2)-1),FIND("(",E2)+1, LEN(E2))
+crsCalc: =MID(LEFT(H2,FIND(">",H2)-1),FIND("EPSG:",H2), LEN(H2))
+"""
+
+# output_file = 'C:\\Path\\output_list.txt'  # Windows path
+output_file = '~/path/output_list.txt'  # Linux path
+
+with open(output_file, 'w') as f:  # write file headers
+    print('name|serviceCalc|tableCalc|geomCalc|source|filter|crsCalc|sourceCrs|featureCount|xmax|ymax|xmin|ymin', file=f)
+
+outputCrs = QgsCoordinateReferenceSystem('EPSG:4326')
+
+for layer in layers:  # iterate over layers list. Result is | delimited output
+    try:  # basic error handling
+        if layer.type() == QgsMapLayer.VectorLayer:  # skip if data type != vector
+            # We will transform the bounding extents to the project crs to identify anything out of place
+            # we can't compare across different CRS systems because it's apples to oranges
+            transform = QgsCoordinateTransform(layer.sourceCrs(), outputCrs, QgsProject.instance())
+            extent = transform.transformBoundingBox(layer.extent())  # layer extent in source coords
+            xmax = extent.xMaximum()
+            ymax = extent.yMaximum()
+            xmin = extent.xMinimum()
+            ymin = extent.yMinimum()
+            # print('{0}||||{1}|{2}||{3}|{4}|{5}|{6}|{7}|{8}'.format(layer.name(), layer.source(), layer.subsetString(),
+            #       layer.sourceCrs(), layer.featureCount(), xmax, ymax, xmin, ymin))  # use this to print to the console only
+            with open(output_file, 'a+') as f:  # use this to append to the output file
+                print('Adding {0}'.format(layer.name()))  # Print the current layer name to console
+                print('{0}||||{1}|{2}||{3}|{4}|{5}|{6}|{7}|{8}'.format(layer.name(), layer.source(), layer.subsetString(),
+                      layer.sourceCrs(), layer.featureCount(), xmax, ymax, xmin, ymin), file=f)  # Write out attributes to file
+        else:
+            print('Skipping non-vector layer {0}'.format(layer.name()))
+    except Exception as err:
+        print(str(err))
+
+print('done...')  # let yourself know it's finished
