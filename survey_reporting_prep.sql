@@ -1,11 +1,12 @@
 --preparing survey table for reporting
-set search_path to wbr_survey;
+set search_path to wbr_survey,public;
 
 --REFRESH MATERIALIZED VIEW wbr_report;
 
 --drop materialized view wbr_report;
 create materialized view wbr_report as
 select 
+sv.name as village_name,
 wbr.fid,
     geometry,
     gt.type as gender,
@@ -180,6 +181,8 @@ left join water_source_used_valuemap av on wbr.water_source_used = av.id
 left join weather_prediction_valuemap aw on wbr.weather_prediction = aw.id
 left join who_fetches_water_valuemap ax on wbr.who_fetches_water = ax.id
 left join years_without_water_valuemap ay on wbr.years_without_water = ay.id
+--which village do they belong to?
+left join survey_villages sv on st_within(wbr.geometry,sv.geom)
 ;
 
 GRANT SELECT ON TABLE wbr_survey.wbr_report TO readonly;	
