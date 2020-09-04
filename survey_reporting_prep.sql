@@ -3,12 +3,13 @@ set search_path to wbr_survey,public;
 
 --REFRESH MATERIALIZED VIEW wbr_report;
 
---drop materialized view wbr_report;
+drop materialized view wbr_report;
 create materialized view wbr_report as
 select 
-sv.name as village_name,
-wbr.fid,
-    geometry,
+    wbr.fid,
+    st_x(geometry) as longitude,
+	st_y(geometry) as latitude,
+	sv.name as village_name,
     gt.type as gender,
     disability,
     msl.marital_status,
@@ -117,7 +118,8 @@ wbr.fid,
     receive_water_bill,
     j.description garden_location,
     water_for_garden,
-    t.description method_watering
+    t.description method_watering,
+	geometry
     --surveyor
 from sync_main.wbr 
 --lookups
@@ -184,5 +186,5 @@ left join years_without_water_valuemap ay on wbr.years_without_water = ay.id
 --which village do they belong to?
 left join survey_villages sv on st_within(wbr.geometry,sv.geom)
 ;
-
+create unique index on wbr_survey.wbr_report (fid);
 GRANT SELECT ON TABLE wbr_survey.wbr_report TO readonly;	

@@ -7,11 +7,12 @@ set geom = st_multi(st_intersection(st_buffer(st_centroid(sv.geom)::geography,50
 --once-off generate small buffers around villages (they were too big before)
 
 --create voronoi view
+--drop view voronoi_villages;
 create view voronoi_villages as
 with vp as
 (select st_VoronoiPolygons(st_collect(st_centroid(geom))) as geom from survey_villages
 )
-select (st_dump(geom)).path[1] as id, (st_dump(geom)).geom as geom from vp;
+select (st_dump(geom)).path[1] as id, (st_dump(geom)).geom::geometry(Polygon,4326) as geom from vp;
 
 --update polygons for those village that have points to encompass all the points in the village
 with 
@@ -27,7 +28,7 @@ cv as
  (select sv.id from survey_villages sv join cv using(id)
  )
 --run first with this to set all polygons (without survey points) to small circles
---update survey_villages sv set geom = st_multi(st_buffer(st_centroid(sv.geom)::geography,500)::geometry) from cv where sv.id not in (select id from matches)
+--update survey_villages sv set geom = st_multi(st_buffer(st_centroid(sv.geom)::geography,500)::geometry) from cv where sv.id not in (select id from matches);
 --then run this to set all villages with points to the cv polygons
 update survey_villages sv set geom = cv.geom from cv where cv.id = sv.id;
 
