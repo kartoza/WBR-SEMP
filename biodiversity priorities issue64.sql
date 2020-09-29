@@ -45,8 +45,8 @@ CREATE INDEX sidx_cba_geom
     ON cba USING gist(geom);
 
 --remove degraded and transformed areas
-***create table cba_untransformed as
-select cba.id,cba.score,st_difference(cba.geom,lc.geom) geom 
+create table cba_untransformed as
+select cba.id,cba.score,st_difference(cba.geom,st_snaptogrid(lc.geom,0.01)) geom 
 from cba,lc_status lc
 where lc.cat in (2,3);
 
@@ -206,11 +206,11 @@ select geom, score from aquaticbuffer
 UNION
 select geom, score from aquaticcluster)
 --clip with lc_status
-select overlay.id,overlay.score,st_difference(overlay.geom,lc.geom) geom 
+select overlay.score,st_difference(overlay.geom,lc.geom) geom 
 from overlay,lc_status lc
 where lc.cat in (2,3);
 
-***CREATE INDEX sidx_overlay_aquatic_untransformed_geom
+CREATE INDEX sidx_overlay_aquatic_untransformed_geom
     ON overlay_aquatic_untransformed USING gist(geom);
 
       --this uses the exteriorrings approach for multipolygons, try it too with DumpRings?
