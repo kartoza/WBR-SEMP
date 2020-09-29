@@ -46,7 +46,7 @@ CREATE INDEX sidx_cba_geom
 
 --remove degraded and transformed areas
 create table cba_untransformed as
-select cba.id,cba.score,st_difference(cba.geom,st_snaptogrid(lc.geom,0.01)) geom 
+select cba.id,cba.score,st_difference(st_snaptogrid(cba.geom,0.01),st_snaptogrid(lc.geom,0.01)) geom 
 from cba,lc_status lc
 where lc.cat in (2,3);
 
