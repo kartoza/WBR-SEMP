@@ -53,7 +53,7 @@ def main():
     # Define our connection string
 
     try:
-        connection = connection = psycopg2.connect(host=host, database=db, user=user, password=pw, port=port)
+        connection = psycopg2.connect(host=host, database=db, user=user, password=pw, port=port)
     except psycopg2.OperationalError as e:
         print(e)
         sys.exit(1)
@@ -258,6 +258,7 @@ WITH DATA;'''
         --D_band 1 --co COMPRESS=DEFLATE --co PREDICTOR=2 --co ZLEVEL=9 \
         --outfile local_natural_resource_dependence.tif'''
     subprocess.call(natural_resource_layer, shell=True)
+
 
 if __name__ == "__main__":
     main()
