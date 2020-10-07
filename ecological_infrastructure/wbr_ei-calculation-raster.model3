@@ -1,0 +1,1686 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="gdal:merge_1">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="gdal:merge"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1690"/>
+        <Option type="double" name="component_pos_y" value="400"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Merge 1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1720"/>
+      <Option type="double" name="component_pos_y" value="525"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_3"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_4"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_5"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_6"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_7"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_8"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_9"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="gdal:merge_1"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DATA_TYPE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="5"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="expression" value="array(@Raster_calculator_1_1_OUTPUT,&#xd;&#xa;@Raster_calculator_2_1_OUTPUT,&#xd;&#xa;@Raster_calculator_3_1_OUTPUT,&#xd;&#xa;@Raster_calculator_4_1_OUTPUT)"/>
+            <Option type="int" name="source" value="3"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_INPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_OUTPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="PCT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SEPARATE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="gdal:merge_2">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="gdal:merge"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1701"/>
+        <Option type="double" name="component_pos_y" value="456"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Merge 2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1720"/>
+      <Option type="double" name="component_pos_y" value="675"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_3"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_4"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_5"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_6"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_7"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_8"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_9"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="gdal:merge_2"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DATA_TYPE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="5"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="expression" value="array(@Raster_calculator_1_2_OUTPUT,&#xd;&#xa;@Raster_calculator_2_2_OUTPUT,&#xd;&#xa;@Raster_calculator_3_2_OUTPUT,&#xd;&#xa;@Raster_calculator_4_2_OUTPUT)"/>
+            <Option type="int" name="source" value="3"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_INPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_OUTPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="PCT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SEPARATE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="gdal:merge_3">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="gdal:merge"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2409.0583482387888"/>
+        <Option type="double" name="component_pos_y" value="732.3594883879388"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Merge status 3"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2620"/>
+      <Option type="double" name="component_pos_y" value="795"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_13"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_15"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="gdal:merge_3"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DATA_TYPE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="5"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="expression" value="array(@Raster_calculator_status_3_2_OUTPUT,@Raster_calculator_status_3_1_OUTPUT)"/>
+            <Option type="int" name="source" value="3"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_INPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_OUTPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="PCT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SEPARATE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="gdal:merge_4">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="gdal:merge"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2069"/>
+        <Option type="double" name="component_pos_y" value="150"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Merge 1 and 2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2050"/>
+      <Option type="double" name="component_pos_y" value="435"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_1"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="gdal:merge_4"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="DATA_TYPE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="5"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="expression" value="array(@Merge_1_OUTPUT,@Merge_2_OUTPUT)"/>
+            <Option type="int" name="source" value="3"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_INPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA_OUTPUT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=""/>
+          </Option>
+        </Option>
+        <Option type="List" name="PCT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SEPARATE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="false"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_1">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2928.027782588531"/>
+        <Option type="double" name="component_pos_y" value="688.9336416160347"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator composite ei"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2620"/>
+      <Option type="double" name="component_pos_y" value="495"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_14"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_1"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="Composite ecological infrastructure">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_1"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="Composite ecological infrastructure"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="2814.7376133287894"/>
+          <Option type="double" name="component_pos_y" value="542.0078379043398"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="Composite ecological infrastructure"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;'Output' from algorithm 'Raster calculator complete iei'@1&quot;+&quot;'Merged' from algorithm 'Merge 1 and 2'@1&quot;+&quot;'Merged' from algorithm 'Merge 2'@1&quot;"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_11">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2235"/>
+        <Option type="double" name="component_pos_y" value="700"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="calculated partial iei"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1990"/>
+      <Option type="double" name="component_pos_y" value="615"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_1"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_11"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="(&quot;status@1&quot; = 1 AND &quot;'Merged' from algorithm 'Merge 2'@1&quot; > 0) * 10 +&#xa;(&quot;status@1&quot; = 1 AND &quot;'Merged' from algorithm 'Merge 1'@1&quot; > 0) * 8 + &#xa;(&quot;status@1&quot; = 2 AND &quot;'Merged' from algorithm 'Merge 2'@1&quot; > 0) * 6 + &#xa;(&quot;status@1&quot; = 2 AND &quot;'Merged' from algorithm 'Merge 1'@1&quot; > 0) * 3"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_12">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2516"/>
+        <Option type="double" name="component_pos_y" value="626"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="calculated cei"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2800"/>
+      <Option type="double" name="component_pos_y" value="345"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_1"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_12"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="Cumulative ecological infrastructure">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_12"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="Cumulative ecological infrastructure"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="3000"/>
+          <Option type="double" name="component_pos_y" value="390"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="Cumulative ecological infrastructure"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;'Output' from algorithm 'Raster calculator composite ei'@1&quot; * 8.33333"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_13">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value="clip the &quot;status 3&quot; zones to within the area of interest"/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2060"/>
+        <Option type="double" name="component_pos_y" value="780"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator status 3_1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2320"/>
+      <Option type="double" name="component_pos_y" value="765"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_1"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_13"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="(&quot;status@1&quot; = 3 AND &quot;'Merged' from algorithm 'Merge 1'@1&quot; > 0) * 1 + 0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4 (2)"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_14">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2633.2901692597416"/>
+        <Option type="double" name="component_pos_y" value="746.9258037116949"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator complete iei"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2320"/>
+      <Option type="double" name="component_pos_y" value="555"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_3"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="qgis:rastercalculator_11"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_14"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;'Output' from algorithm 'calculated partial iei'@1&quot; + &quot;'Merged' from algorithm 'Merge status 3'@1&quot;"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_15">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2526.616303494027"/>
+        <Option type="double" name="component_pos_y" value="874.3418100429651"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator status 3_2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2320"/>
+      <Option type="double" name="component_pos_y" value="855"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_1"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="gdal:merge_2"/>
+          <Option type="QString" name="conditional_branch" value=""/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="qgis:rastercalculator_15"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="(&quot;status@1&quot; = 3 AND &quot;'Merged' from algorithm 'Merge 2'@1&quot; > 0) * 1 + 0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4 (2)"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_2">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="194"/>
+        <Option type="double" name="component_pos_y" value="281"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 1_1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="465"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_2"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 1@1&quot;=1"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_3">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="332"/>
+        <Option type="double" name="component_pos_y" value="394"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 1_2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="585"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_3"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 1@1&quot;=2"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_4">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="473"/>
+        <Option type="double" name="component_pos_y" value="290"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 2_1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="700"/>
+      <Option type="double" name="component_pos_y" value="465"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_4"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 2@1&quot;=1"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_5">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="565"/>
+        <Option type="double" name="component_pos_y" value="431"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 2_2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="700"/>
+      <Option type="double" name="component_pos_y" value="585"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_5"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 2@1&quot;=2"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_6">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="754"/>
+        <Option type="double" name="component_pos_y" value="302"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 3_1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="970"/>
+      <Option type="double" name="component_pos_y" value="465"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_6"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 3@1&quot;=1"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_7">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="846"/>
+        <Option type="double" name="component_pos_y" value="443"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 3_2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="970"/>
+      <Option type="double" name="component_pos_y" value="585"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_7"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 3@1&quot;=2"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_8">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="998"/>
+        <Option type="double" name="component_pos_y" value="374"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 4_1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1240"/>
+      <Option type="double" name="component_pos_y" value="465"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_8"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 4@1&quot;=1"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_9">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="qgis:rastercalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1090"/>
+        <Option type="double" name="component_pos_y" value="515"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Raster calculator 4_2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1240"/>
+      <Option type="double" name="component_pos_y" value="585"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="qgis:rastercalculator_9"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CELLSIZE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CRS">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;image 4@1&quot;=2"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTENT">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="LAYERS">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image1"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image2"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image3"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="image4"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="Map" name="designerParameterValues">
+    <Option type="bool" name="VERBOSE_LOG" value="true"/>
+    <Option type="QgsProcessingOutputLayerDefinition" name="gdal:merge_1:merge 1">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="gdal:merge_2:merge 2">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QString" name="image1" value="test_wa_4cf0bd77_6829_455f_9310_50e0ed0c8e40"/>
+    <Option type="QString" name="image2" value="test_ec_263b06cb_c9fc_4d12_81b3_e235b3349c69"/>
+    <Option type="QString" name="image3" value="test_fa_e9cf4a2d_bba0_40c0_82da_25bb128a9548"/>
+    <Option type="QString" name="image4" value="test_wq_ce2b4ed5_3fd8_4d70_aa55_1dbbc107bc6c"/>
+    <Option type="QString" name="image4 (2)" value="lc_status_b9c98cfc_a6e8_43f9_91c1_698d35d20a34"/>
+    <Option type="QgsProcessingOutputLayerDefinition" name="qgis:rastercalculator_11:Caclulated IEI">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="qgis:rastercalculator_12:Cumulative Environmental Infrastructure">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option name="modelVariables"/>
+  <Option type="QString" name="model_group" value="raster-processing"/>
+  <Option type="QString" name="model_name" value="ei calculation"/>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="VERBOSE_LOG">
+      <Option type="bool" name="default" value="false"/>
+      <Option type="QString" name="description" value="Verbose logging"/>
+      <Option type="int" name="flags" value="12"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="VERBOSE_LOG"/>
+      <Option type="QString" name="parameter_type" value="boolean"/>
+    </Option>
+    <Option type="Map" name="image1">
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="image 1"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="image1"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+    <Option type="Map" name="image2">
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="image 2"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="image2"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+    <Option type="Map" name="image3">
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="image 3"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="image3"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+    <Option type="Map" name="image4">
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="image 4"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="image4"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+    <Option type="Map" name="image4 (2)">
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="status"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="image4 (2)"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_12:Cumulative ecological infrastructure">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="Cumulative ecological infrastructure"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="qgis:rastercalculator_12:Cumulative ecological infrastructure"/>
+      <Option type="QString" name="parameter_type" value="rasterDestination"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="qgis:rastercalculator_1:Composite ecological infrastructure">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="invalid" name="default"/>
+      <Option type="QString" name="description" value="Composite ecological infrastructure"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="qgis:rastercalculator_1:Composite ecological infrastructure"/>
+      <Option type="QString" name="parameter_type" value="rasterDestination"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="image1">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value="Image 1 through 4 represent the rasterised ecological infrastructure cornerstone datasets, each expected to have an integer value of 1 or 2&#xa;&#xa;This includes:&#xa;erosion control&#xa;water quality&#xa;water availability&#xa;flood attenuation"/>
+        <Option type="double" name="component_height" value="120"/>
+        <Option type="double" name="component_pos_x" value="435"/>
+        <Option type="double" name="component_pos_y" value="210"/>
+        <Option type="double" name="component_width" value="210"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="image1"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="315"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="image1"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="image2">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="760"/>
+        <Option type="double" name="component_pos_y" value="15"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="image2"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="700"/>
+      <Option type="double" name="component_pos_y" value="315"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="image2"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="image3">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="980"/>
+        <Option type="double" name="component_pos_y" value="15"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="image3"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="970"/>
+      <Option type="double" name="component_pos_y" value="315"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="image3"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="image4">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1200"/>
+        <Option type="double" name="component_pos_y" value="15"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="image4"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1240"/>
+      <Option type="double" name="component_pos_y" value="315"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="image4"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="image4 (2)">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1536"/>
+        <Option type="double" name="component_pos_y" value="39"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="image4 (2)"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="2200"/>
+      <Option type="double" name="component_pos_y" value="315"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="image4 (2)"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+  </Option>
+</Option>
