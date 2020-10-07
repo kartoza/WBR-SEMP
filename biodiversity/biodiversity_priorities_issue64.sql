@@ -1,5 +1,12 @@
 --biodiversity priorities https://github.com/kartoza/WBR-SEMP/issues/64
 
+--prep place names
+drop table geonames_wbr;
+create table geonames_wbr as
+select geonames.* from geonames join aoi_wbr on st_within(st_transform(aoi_wbr.geom,4326),geonames.geom);
+
+select count(*) from geonames
+
 --AOI
 select st_astext(st_envelope(geom)) from aoi_wbr;
 select st_astext(st_envelope(st_transform(geom,32735))) from aoi_wbr;
@@ -18,6 +25,7 @@ CREATE INDEX sidx_aoi_wbr_singlepoly_geom
 
 --clip lc_status to aoi (lc_status_block was exported from GRASS)
 update lc_status_block set geom = st_makevalid(geom) where not st_isvalid(geom);
+update lc_status set geom = st_makevalid(geom) where not st_isvalid(geom);
 
 create table lc_status as
 select lc.fid,lc.cat,st_multi(st_intersection(lc.geom,aoi.geom))::geometry(MultiPolygon,32735) geom
@@ -45,8 +53,8 @@ CREATE INDEX sidx_cba_geom
     ON cba USING gist(geom);
 
 --remove degraded and transformed areas
-create table cba_untransformed as
-select cba.id,cba.score,st_difference(st_snaptogrid(cba.geom,0.01),st_snaptogrid(lc.geom,0.01)) geom 
+***create table cba_untransformed as
+select cba.id,cba.score,st_makevalid(st_difference(st_snaptogrid(cba.geom,0.01),st_snaptogrid(lc.geom,0.01))) geom 
 from cba,lc_status lc
 where lc.cat in (2,3);
 
@@ -180,6 +188,15 @@ CREATE TABLE polys_aquatic AS
   
 CREATE INDEX sidx_polys_aquatic_geom
     ON polys_aquatic USING gist(geom);
+
+/* temp while LC clipping not working
+
+ALTER TABLE polys_aquatic ADD COLUMN score INTEGER DEFAULT 0;
+with topval as (select max(aggregate) top from polys_aquatic)
+UPDATE polys_aquatic set score = case when aggregate > 0 then log(aggregate)/log(topval.top)*5 else 0 end + max/2
+FROM topval;
+
+*/
 
 ALTER TABLE polys_aquatic ADD COLUMN max INTEGER DEFAULT 0;
 UPDATE polys_aquatic polys set max = p.max
@@ -339,7 +356,10 @@ select geom, score from paes
 UNION
 select geom, score from cba
 UNION
-select geom, max+aggregate as score from polys_aquatic;
+--log transform aquatic aggregate then normalise and add to max to get score out of 10 for aquatic. Redo this once LC clipped from 2nd one 
+(with topval as (select max(aggregate) top from polys_aquatic)
+select geom,case when aggregate > 0 then log(aggregate)/log(topval.top)*5 else 0 end + max/2 score from polys_aquatic, topval);
+
 
 CREATE INDEX sidx_overlay_total_geom
     ON overlay_total USING gist(geom);
@@ -377,6 +397,10 @@ FROM (
   GROUP BY p.id
 ) AS p
 WHERE p.id = polys.id;
+--standardise to [1:100]
+ALTER TABLE polys_total ADD COLUMN standard_score INTEGER DEFAULT 0;
+with topval as (select max(score)::double precision score from polys_total)
+update polys_total pt set standard_score = pt.score / topval.score * 100 from topval;
 
   --remove degraded and transformed areas
 select overlay.id,overlay.score,st_difference(overlay.geom,lc.geom) geom 
