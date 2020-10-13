@@ -16,40 +16,14 @@
         <Option value="true" name="outputs_collapsed" type="bool"/>
         <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Rasterize (vector to raster)" name="component_description" type="QString"/>
+      <Option value="Rasterize river layer" name="component_description" type="QString"/>
       <Option value="30" name="component_height" type="double"/>
-      <Option value="705" name="component_pos_x" type="double"/>
-      <Option value="124" name="component_pos_y" type="double"/>
+      <Option value="697" name="component_pos_x" type="double"/>
+      <Option value="118" name="component_pos_y" type="double"/>
       <Option value="200" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="gdal:rasterize_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="river_rast" type="Map">
-          <Option value="gdal:rasterize_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="river_rast" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="860.5" name="component_pos_x" type="double"/>
-          <Option value="176" name="component_pos_y" type="double"/>
-          <Option value="107" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="river_rast" name="name" type="QString"/>
-          <Option value="OUTPUT" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -67,9 +41,8 @@
         </Option>
         <Option name="EXTENT" type="List">
           <Option type="Map">
-            <Option value="grass7:r.mask.vect_1" name="child_id" type="QString"/>
-            <Option value="output" name="output_name" type="QString"/>
-            <Option value="1" name="source" type="int"/>
+            <Option value="rivers" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
         <Option name="EXTRA" type="List">
@@ -98,8 +71,8 @@
         </Option>
         <Option name="INPUT" type="List">
           <Option type="Map">
-            <Option value="2" name="source" type="int"/>
-            <Option value="rivers_500k_clip_82055f59_88b9_4791_8708_78e3acaed082" name="static_value" type="QString"/>
+            <Option value="rivers" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
         <Option name="INVERT" type="List">
@@ -156,33 +129,7 @@
       <Option value="159" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="gdal:sieve_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="sieved_combined" type="Map">
-          <Option value="gdal:sieve_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="sieved_combined" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="447.5" name="component_pos_x" type="double"/>
-          <Option value="846" name="component_pos_y" type="double"/>
-          <Option value="143" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="sieved_combined" name="name" type="QString"/>
-          <Option value="OUTPUT" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -338,33 +285,7 @@
       <Option value="146" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="aspect_south" type="Map">
-          <Option value="grass7:r.mapcalc.simple_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="aspect_south" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="559.5" name="component_pos_x" type="double"/>
-          <Option value="438.5" name="component_pos_y" type="double"/>
-          <Option value="121" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="aspect_south" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -460,33 +381,7 @@
       <Option value="121" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_2" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="slope_10" type="Map">
-          <Option value="grass7:r.mapcalc.simple_2" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="slope_10" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="77.5" name="component_pos_x" type="double"/>
-          <Option value="438.5" name="component_pos_y" type="double"/>
-          <Option value="112.99999999999999" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="slope_10" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -582,33 +477,7 @@
       <Option value="119" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_3" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="slope_15" type="Map">
-          <Option value="grass7:r.mapcalc.simple_3" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="slope_15" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="258" name="component_pos_x" type="double"/>
-          <Option value="439.5" name="component_pos_y" type="double"/>
-          <Option value="110.00000000000001" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="slope_15" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -704,33 +573,7 @@
       <Option value="130" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_4" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="combined_slope_and_aspect_south" type="Map">
-          <Option value="grass7:r.mapcalc.simple_4" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="combined_slope_and_aspect_south" name="component_description" type="QString"/>
-          <Option value="31" name="component_height" type="double"/>
-          <Option value="510.5" name="component_pos_x" type="double"/>
-          <Option value="653.5" name="component_pos_y" type="double"/>
-          <Option value="162.99999999999997" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="combined_slope_and_aspect_south" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -828,7 +671,7 @@
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_5" name="id" type="QString"/>
       <Option name="outputs" type="Map">
-        <Option name="south_facing_slope" type="Map">
+        <Option name="south facing slope" type="Map">
           <Option value="grass7:r.mapcalc.simple_5" name="child_id" type="QString"/>
           <Option value="" name="color" type="QString"/>
           <Option name="comment" type="Map">
@@ -841,14 +684,14 @@
             <Option value="true" name="outputs_collapsed" type="bool"/>
             <Option value="true" name="parameters_collapsed" type="bool"/>
           </Option>
-          <Option value="south_facing_slope" name="component_description" type="QString"/>
+          <Option value="south facing slope" name="component_description" type="QString"/>
           <Option value="30" name="component_height" type="double"/>
-          <Option value="350" name="component_pos_x" type="double"/>
-          <Option value="1035" name="component_pos_y" type="double"/>
+          <Option value="340.5" name="component_pos_x" type="double"/>
+          <Option value="988" name="component_pos_y" type="double"/>
           <Option value="200" name="component_width" type="double"/>
           <Option name="default_value" type="invalid"/>
           <Option value="false" name="mandatory" type="bool"/>
-          <Option value="south_facing_slope" name="name" type="QString"/>
+          <Option value="south facing slope" name="name" type="QString"/>
           <Option value="output" name="output_name" type="QString"/>
           <Option value="true" name="outputs_collapsed" type="bool"/>
           <Option value="true" name="parameters_collapsed" type="bool"/>
@@ -949,33 +792,7 @@
       <Option value="200" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_6" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="kloof_combined" type="Map">
-          <Option value="grass7:r.mapcalc.simple_6" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="kloof_combined" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="971" name="component_pos_x" type="double"/>
-          <Option value="702" name="component_pos_y" type="double"/>
-          <Option value="200" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="kloof_combined" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -1073,7 +890,7 @@
       <Option name="dependencies"/>
       <Option value="grass7:r.mapcalc.simple_7" name="id" type="QString"/>
       <Option name="outputs" type="Map">
-        <Option name="local_refugia" type="Map">
+        <Option name="Local refugia" type="Map">
           <Option value="grass7:r.mapcalc.simple_7" name="child_id" type="QString"/>
           <Option value="" name="color" type="QString"/>
           <Option name="comment" type="Map">
@@ -1086,14 +903,14 @@
             <Option value="true" name="outputs_collapsed" type="bool"/>
             <Option value="true" name="parameters_collapsed" type="bool"/>
           </Option>
-          <Option value="local_refugia" name="component_description" type="QString"/>
+          <Option value="Local refugia" name="component_description" type="QString"/>
           <Option value="30" name="component_height" type="double"/>
-          <Option value="854" name="component_pos_x" type="double"/>
-          <Option value="1461" name="component_pos_y" type="double"/>
+          <Option value="994" name="component_pos_x" type="double"/>
+          <Option value="1428" name="component_pos_y" type="double"/>
           <Option value="200" name="component_width" type="double"/>
           <Option name="default_value" type="invalid"/>
           <Option value="false" name="mandatory" type="bool"/>
-          <Option value="local_refugia" name="name" type="QString"/>
+          <Option value="Local refugia" name="name" type="QString"/>
           <Option value="output" name="output_name" type="QString"/>
           <Option value="true" name="outputs_collapsed" type="bool"/>
           <Option value="true" name="parameters_collapsed" type="bool"/>
@@ -1190,8 +1007,8 @@
       </Option>
       <Option value="Masking 30m DEM" name="component_description" type="QString"/>
       <Option value="30" name="component_height" type="double"/>
-      <Option value="124" name="component_pos_x" type="double"/>
-      <Option value="74" name="component_pos_y" type="double"/>
+      <Option value="128" name="component_pos_x" type="double"/>
+      <Option value="107" name="component_pos_y" type="double"/>
       <Option value="200" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.mask.vect_1" name="id" type="QString"/>
@@ -1249,8 +1066,8 @@
         </Option>
         <Option name="input" type="List">
           <Option type="Map">
-            <Option value="2" name="source" type="int"/>
-            <Option value="south_africa_4996ee33_0004_40ad_ba15_b61341b9545a" name="static_value" type="QString"/>
+            <Option value="DEM" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
         <Option name="vector" type="List">
@@ -1289,33 +1106,7 @@
       <Option value="200" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.neighbors_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="river_neighbour" type="Map">
-          <Option value="grass7:r.neighbors_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="river_neighbour" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="892.5" name="component_pos_x" type="double"/>
-          <Option value="366" name="component_pos_y" type="double"/>
-          <Option value="131" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="river_neighbour" name="name" type="QString"/>
-          <Option value="output" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -1423,33 +1214,7 @@
       <Option value="200" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="grass7:r.slope.aspect_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="aspect" type="Map">
-          <Option value="grass7:r.slope.aspect_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="aspect" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="382.5" name="component_pos_x" type="double"/>
-          <Option value="240" name="component_pos_y" type="double"/>
-          <Option value="117" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="aspect" name="name" type="QString"/>
-          <Option value="aspect" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -1681,27 +1446,23 @@
   <Option name="help"/>
   <Option name="modelVariables"/>
   <Option value="" name="model_group" type="QString"/>
-  <Option value="local_refugia" name="model_name" type="QString"/>
+  <Option value="Local refugia" name="model_name" type="QString"/>
   <Option name="parameterDefinitions" type="Map">
-    <Option name="gdal:rasterize_1:river_rast" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
+    <Option name="DEM" type="Map">
       <Option name="default" type="invalid"/>
-      <Option value="river_rast" name="description" type="QString"/>
+      <Option value="DEM" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="gdal:rasterize_1:river_rast" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
+      <Option value="DEM" name="name" type="QString"/>
+      <Option value="raster" name="parameter_type" type="QString"/>
     </Option>
-    <Option name="gdal:sieve_1:sieved_combined" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="sieved_combined" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
+    <Option name="VERBOSE_LOG" type="Map">
+      <Option value="false" name="default" type="bool"/>
+      <Option value="Verbose logging" name="description" type="QString"/>
+      <Option value="12" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="gdal:sieve_1:sieved_combined" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
+      <Option value="VERBOSE_LOG" name="name" type="QString"/>
+      <Option value="boolean" name="parameter_type" type="QString"/>
     </Option>
     <Option name="gdal:sieve_2:kloof" type="Map">
       <Option value="true" name="create_by_default" type="bool"/>
@@ -1713,97 +1474,79 @@
       <Option value="rasterDestination" name="parameter_type" type="QString"/>
       <Option value="false" name="supports_non_file_outputs" type="bool"/>
     </Option>
-    <Option name="grass7:r.mapcalc.simple_1:aspect_south" type="Map">
+    <Option name="grass7:r.mapcalc.simple_5:south facing slope" type="Map">
       <Option value="true" name="create_by_default" type="bool"/>
       <Option name="default" type="invalid"/>
-      <Option value="aspect_south" name="description" type="QString"/>
+      <Option value="south facing slope" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_1:aspect_south" name="name" type="QString"/>
+      <Option value="grass7:r.mapcalc.simple_5:south facing slope" name="name" type="QString"/>
       <Option value="rasterDestination" name="parameter_type" type="QString"/>
       <Option value="false" name="supports_non_file_outputs" type="bool"/>
     </Option>
-    <Option name="grass7:r.mapcalc.simple_2:slope_10" type="Map">
+    <Option name="grass7:r.mapcalc.simple_7:Local refugia" type="Map">
       <Option value="true" name="create_by_default" type="bool"/>
       <Option name="default" type="invalid"/>
-      <Option value="slope_10" name="description" type="QString"/>
+      <Option value="Local refugia" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_2:slope_10" name="name" type="QString"/>
+      <Option value="grass7:r.mapcalc.simple_7:Local refugia" name="name" type="QString"/>
       <Option value="rasterDestination" name="parameter_type" type="QString"/>
       <Option value="false" name="supports_non_file_outputs" type="bool"/>
     </Option>
-    <Option name="grass7:r.mapcalc.simple_3:slope_15" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
+    <Option name="rivers" type="Map">
+      <Option name="data_types"/>
       <Option name="default" type="invalid"/>
-      <Option value="slope_15" name="description" type="QString"/>
+      <Option value="rivers" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_3:slope_15" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.mapcalc.simple_4:combined_slope_and_aspect_south" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="combined_slope_and_aspect_south" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_4:combined_slope_and_aspect_south" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.mapcalc.simple_5:south_facing_slope" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="south_facing_slope" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_5:south_facing_slope" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.mapcalc.simple_6:kloof_combined" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="kloof_combined" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_6:kloof_combined" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.mapcalc.simple_7:local_refugia" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="local_refugia" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.mapcalc.simple_7:local_refugia" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.neighbors_1:river_neighbour" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="river_neighbour" name="description" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.neighbors_1:river_neighbour" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
-    </Option>
-    <Option name="grass7:r.slope.aspect_1:aspect" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option value="aspect" name="description" type="QString"/>
-      <Option value="8" name="flags" type="int"/>
-      <Option name="metadata"/>
-      <Option value="grass7:r.slope.aspect_1:aspect" name="name" type="QString"/>
-      <Option value="rasterDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
+      <Option value="rivers" name="name" type="QString"/>
+      <Option value="vector" name="parameter_type" type="QString"/>
     </Option>
   </Option>
   <Option name="parameterOrder"/>
-  <Option name="parameters"/>
+  <Option name="parameters" type="Map">
+    <Option name="DEM" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="320" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="DEM" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="114" name="component_pos_x" type="double"/>
+      <Option value="25" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="DEM" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="rivers" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="540" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="rivers" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="696" name="component_pos_x" type="double"/>
+      <Option value="24" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="rivers" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+  </Option>
 </Option>

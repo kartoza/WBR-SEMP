@@ -1,411 +1,329 @@
 <!DOCTYPE model>
 <Option type="Map">
-  <Option type="Map" name="children">
-    <Option type="Map" name="gdal:rasterize_1">
-      <Option value="true" type="bool" name="active"/>
+  <Option name="children" type="Map">
+    <Option name="gdal:rasterize_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
       <Option name="alg_config"/>
-      <Option value="gdal:rasterize" type="QString" name="alg_id"/>
-      <Option value="" type="QString" name="color"/>
-      <Option type="Map" name="comment">
-        <Option value="" type="QString" name="color"/>
-        <Option value="" type="QString" name="component_description"/>
-        <Option value="60" type="double" name="component_height"/>
-        <Option value="760" type="double" name="component_pos_x"/>
-        <Option value="315" type="double" name="component_pos_y"/>
-        <Option value="100" type="double" name="component_width"/>
-        <Option value="true" type="bool" name="outputs_collapsed"/>
-        <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="gdal:rasterize" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="760" name="component_pos_x" type="double"/>
+        <Option value="315" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Rasterize (vector to raster)" type="QString" name="component_description"/>
-      <Option value="30" type="double" name="component_height"/>
-      <Option value="396" type="double" name="component_pos_x"/>
-      <Option value="665" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="Rasterize (vector to raster)" name="component_description" type="QString"/>
+      <Option value="46" name="component_height" type="double"/>
+      <Option value="828" name="component_pos_x" type="double"/>
+      <Option value="470" name="component_pos_y" type="double"/>
+      <Option value="144" name="component_width" type="double"/>
       <Option name="dependencies"/>
-      <Option value="gdal:rasterize_1" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="priority_large_unfragmented_landscapes">
-          <Option value="gdal:rasterize_1" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="gdal:rasterize_1" name="id" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Priority large unfragmented areas" type="Map">
+          <Option value="gdal:rasterize_1" name="child_id" type="QString"/>
+          <Option value="" name="color" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option value="" name="color" type="QString"/>
+            <Option value="" name="component_description" type="QString"/>
+            <Option value="60" name="component_height" type="double"/>
+            <Option value="0" name="component_pos_x" type="double"/>
+            <Option value="0" name="component_pos_y" type="double"/>
+            <Option value="100" name="component_width" type="double"/>
+            <Option value="true" name="outputs_collapsed" type="bool"/>
+            <Option value="true" name="parameters_collapsed" type="bool"/>
           </Option>
-          <Option value="priority_large_unfragmented_landscapes" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="606" type="double" name="component_pos_x"/>
-          <Option value="745" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="priority_large_unfragmented_landscapes" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
+          <Option value="Priority large unfragmented areas" name="component_description" type="QString"/>
+          <Option value="30" name="component_height" type="double"/>
+          <Option value="972" name="component_pos_x" type="double"/>
+          <Option value="539" name="component_pos_y" type="double"/>
+          <Option value="200" name="component_width" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option value="false" name="mandatory" type="bool"/>
+          <Option value="Priority large unfragmented areas" name="name" type="QString"/>
+          <Option value="OUTPUT" name="output_name" type="QString"/>
+          <Option value="true" name="outputs_collapsed" type="bool"/>
+          <Option value="true" name="parameters_collapsed" type="bool"/>
         </Option>
       </Option>
-      <Option value="true" type="bool" name="outputs_collapsed"/>
-      <Option value="true" type="bool" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="BURN">
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="BURN" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="1" type="double" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="double"/>
           </Option>
         </Option>
-        <Option type="List" name="DATA_TYPE">
+        <Option name="DATA_TYPE" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="1" type="int" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
           </Option>
         </Option>
-        <Option type="List" name="EXTENT">
+        <Option name="EXTENT" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="440045.789400000,743041.376800000,7198576.944000000,7516700.782100000 [EPSG:32735]" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="440045.789400000,743041.376800000,7198576.944000000,7516700.782100000 [EPSG:32735]" name="static_value" type="QString"/>
           </Option>
         </Option>
-        <Option type="List" name="EXTRA">
+        <Option name="EXTRA" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
           </Option>
         </Option>
-        <Option type="List" name="FIELD">
+        <Option name="FIELD" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
           </Option>
         </Option>
-        <Option type="List" name="HEIGHT">
+        <Option name="HEIGHT" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="30" type="double" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="30" name="static_value" type="double"/>
           </Option>
         </Option>
-        <Option type="List" name="INIT">
+        <Option name="INIT" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="0" type="double" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="double"/>
           </Option>
         </Option>
-        <Option type="List" name="INPUT">
+        <Option name="INPUT" type="List">
           <Option type="Map">
-            <Option value="native:dissolve_1" type="QString" name="child_id"/>
-            <Option value="OUTPUT" type="QString" name="output_name"/>
-            <Option value="1" type="int" name="source"/>
+            <Option value="native:dissolve_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
           </Option>
         </Option>
-        <Option type="List" name="INVERT">
+        <Option name="INVERT" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="false" type="bool" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
           </Option>
         </Option>
-        <Option type="List" name="NODATA">
+        <Option name="NODATA" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="-999999" type="double" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="-999999" name="static_value" type="double"/>
           </Option>
         </Option>
-        <Option type="List" name="OPTIONS">
+        <Option name="OPTIONS" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
           </Option>
         </Option>
-        <Option type="List" name="UNITS">
+        <Option name="UNITS" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="1" type="int" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
           </Option>
         </Option>
-        <Option type="List" name="WIDTH">
+        <Option name="WIDTH" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="30" type="double" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="30" name="static_value" type="double"/>
           </Option>
         </Option>
       </Option>
     </Option>
-    <Option type="Map" name="native:dissolve_1">
-      <Option value="true" type="bool" name="active"/>
+    <Option name="native:dissolve_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
       <Option name="alg_config"/>
-      <Option value="native:dissolve" type="QString" name="alg_id"/>
-      <Option value="" type="QString" name="color"/>
-      <Option type="Map" name="comment">
-        <Option value="196,180,32,255" type="QString" name="color"/>
-        <Option value="Dissolving the merned protected layer into one layer. The layer will be converted to raster at 30m resolution." type="QString" name="component_description"/>
-        <Option value="60" type="double" name="component_height"/>
-        <Option value="709" type="double" name="component_pos_x"/>
-        <Option value="463" type="double" name="component_pos_y"/>
-        <Option value="100" type="double" name="component_width"/>
-        <Option value="true" type="bool" name="outputs_collapsed"/>
-        <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="native:dissolve" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="196,180,32,255" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="709" name="component_pos_x" type="double"/>
+        <Option value="463" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Dissolve" type="QString" name="component_description"/>
-      <Option value="30" type="double" name="component_height"/>
-      <Option value="447" type="double" name="component_pos_x"/>
-      <Option value="462" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="Dissolve" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="708" name="component_pos_x" type="double"/>
+      <Option value="313" name="component_pos_y" type="double"/>
+      <Option value="130" name="component_width" type="double"/>
       <Option name="dependencies"/>
-      <Option value="native:dissolve_1" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="protected_dissolved">
-          <Option value="native:dissolve_1" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="189,169,38,255" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="protected_dissolved" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="632" type="double" name="component_pos_x"/>
-          <Option value="585" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="protected_dissolved" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
-      <Option value="true" type="bool" name="outputs_collapsed"/>
-      <Option value="true" type="bool" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="FIELD">
+      <Option value="native:dissolve_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option type="StringList" name="static_value">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
               <Option value="" type="QString"/>
             </Option>
           </Option>
         </Option>
-        <Option type="List" name="INPUT">
+        <Option name="INPUT" type="List">
           <Option type="Map">
-            <Option value="native:union_1" type="QString" name="child_id"/>
-            <Option value="OUTPUT" type="QString" name="output_name"/>
-            <Option value="1" type="int" name="source"/>
+            <Option value="native:union_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
           </Option>
         </Option>
       </Option>
     </Option>
-    <Option type="Map" name="native:mergevectorlayers_1">
-      <Option value="true" type="bool" name="active"/>
+    <Option name="native:mergevectorlayers_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
       <Option name="alg_config"/>
-      <Option value="native:mergevectorlayers" type="QString" name="alg_id"/>
-      <Option value="" type="QString" name="color"/>
-      <Option type="Map" name="comment">
-        <Option value="202,220,122,255" type="QString" name="color"/>
-        <Option value="Merging national_protected_ares, formal_protected_areas, npaes and sacad_2020 layers" type="QString" name="component_description"/>
-        <Option value="60" type="double" name="component_height"/>
-        <Option value="797" type="double" name="component_pos_x"/>
-        <Option value="83" type="double" name="component_pos_y"/>
-        <Option value="100" type="double" name="component_width"/>
-        <Option value="true" type="bool" name="outputs_collapsed"/>
-        <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="native:mergevectorlayers" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="202,220,122,255" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="797" name="component_pos_x" type="double"/>
+        <Option value="83" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Merge vector layers" type="QString" name="component_description"/>
-      <Option value="30" type="double" name="component_height"/>
-      <Option value="414" type="double" name="component_pos_x"/>
-      <Option value="85" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="Merge vector layers" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="385.5" name="component_pos_x" type="double"/>
+      <Option value="311" name="component_pos_y" type="double"/>
+      <Option value="157" name="component_width" type="double"/>
       <Option name="dependencies"/>
-      <Option value="native:mergevectorlayers_1" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="merged_protected">
-          <Option value="native:mergevectorlayers_1" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="merged_protected" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="671" type="double" name="component_pos_x"/>
-          <Option value="176" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="merged_protected" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
-      <Option value="true" type="bool" name="outputs_collapsed"/>
-      <Option value="false" type="bool" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="CRS">
+      <Option value="native:mergevectorlayers_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="false" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CRS" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="ProjectCrs" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="ProjectCrs" name="static_value" type="QString"/>
           </Option>
         </Option>
-        <Option type="List" name="LAYERS">
+        <Option name="LAYERS" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option type="List" name="static_value">
-              <Option value="C:\Users\User\Desktop\Milestone_5\Updated_M5_Layers\national_protected_areas.shp|layername=national_protected_areas" type="QString"/>
-              <Option value="formal_protected_areas_21b0b261_e970_4260_b5c1_1fdf6591777d" type="QString"/>
-              <Option value="npaes_cdbbf9a7_2264_4dca_9496_7864dfc25f49" type="QString"/>
-            </Option>
+            <Option value="ProtectedAreas" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
       </Option>
     </Option>
-    <Option type="Map" name="native:union_1">
-      <Option value="true" type="bool" name="active"/>
+    <Option name="native:union_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
       <Option name="alg_config"/>
-      <Option value="native:union" type="QString" name="alg_id"/>
-      <Option value="" type="QString" name="color"/>
-      <Option type="Map" name="comment">
-        <Option value="" type="QString" name="color"/>
-        <Option value="" type="QString" name="component_description"/>
-        <Option value="60" type="double" name="component_height"/>
-        <Option value="627" type="double" name="component_pos_x"/>
-        <Option value="823" type="double" name="component_pos_y"/>
-        <Option value="100" type="double" name="component_width"/>
-        <Option value="true" type="bool" name="outputs_collapsed"/>
-        <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option value="native:union" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="627" name="component_pos_x" type="double"/>
+        <Option value="823" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Union" type="QString" name="component_description"/>
-      <Option value="30" type="double" name="component_height"/>
-      <Option value="463" type="double" name="component_pos_x"/>
-      <Option value="237" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="Union" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="548.5" name="component_pos_x" type="double"/>
+      <Option value="454" name="component_pos_y" type="double"/>
+      <Option value="125" name="component_width" type="double"/>
       <Option name="dependencies"/>
-      <Option value="native:union_1" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="union_protect">
-          <Option value="native:union_1" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="union_protect" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="740" type="double" name="component_pos_x"/>
-          <Option value="350" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="union_protect" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
-      <Option value="true" type="bool" name="outputs_collapsed"/>
-      <Option value="true" type="bool" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="INPUT">
+      <Option value="native:union_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option type="QgsProcessingFeatureSourceDefinition" name="static_value">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="QgsProcessingFeatureSourceDefinition">
               <Option type="Map">
-                <Option value="-1" type="qlonglong" name="feature_limit"/>
-                <Option value="1" type="int" name="flags"/>
-                <Option value="1" type="int" name="geometry_check"/>
-                <Option value="false" type="bool" name="selected_only"/>
-                <Option type="Map" name="source">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="1" type="int" name="type"/>
-                  <Option value="protected_areas_sa_8abad75c_2883_4b73_aac8_b437c1ed3662" type="QString" name="val"/>
+                <Option value="-1" name="feature_limit" type="qlonglong"/>
+                <Option value="1" name="flags" type="int"/>
+                <Option value="1" name="geometry_check" type="int"/>
+                <Option value="false" name="selected_only" type="bool"/>
+                <Option name="source" type="Map">
+                  <Option value="true" name="active" type="bool"/>
+                  <Option value="1" name="type" type="int"/>
+                  <Option value="protected_areas_sa_8abad75c_2883_4b73_aac8_b437c1ed3662" name="val" type="QString"/>
                 </Option>
               </Option>
             </Option>
           </Option>
         </Option>
-        <Option type="List" name="OVERLAY">
+        <Option name="OVERLAY" type="List">
           <Option type="Map">
-            <Option value="native:mergevectorlayers_1" type="QString" name="child_id"/>
-            <Option value="OUTPUT" type="QString" name="output_name"/>
-            <Option value="1" type="int" name="source"/>
+            <Option value="native:mergevectorlayers_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
           </Option>
         </Option>
-        <Option type="List" name="OVERLAY_FIELDS_PREFIX">
+        <Option name="OVERLAY_FIELDS_PREFIX" type="List">
           <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option value="" type="QString" name="static_value"/>
+            <Option value="2" name="source" type="int"/>
+            <Option value="" name="static_value" type="QString"/>
           </Option>
         </Option>
       </Option>
     </Option>
   </Option>
-  <Option type="Map" name="designerParameterValues">
-    <Option value="true" type="bool" name="VERBOSE_LOG"/>
-    <Option type="QgsProcessingOutputLayerDefinition" name="gdal:rasterize_1:priority_large_unfragmented_landscapes">
+  <Option name="designerParameterValues" type="Map">
+    <Option value="true" name="VERBOSE_LOG" type="bool"/>
+    <Option name="gdal:rasterize_1:priority_large_unfragmented_landscapes" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
         </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="C:/Users/User/Desktop/Milestone_5/Updated_M5_Layers/priority.tif" type="QString" name="val"/>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="C:/Users/User/Desktop/Milestone_5/Updated_M5_Layers/priority.tif" name="val" type="QString"/>
         </Option>
       </Option>
     </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:dissolve_1:protected_dissolved">
+    <Option name="native:dissolve_1:protected_dissolved" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
         </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="C:/Users/User/Desktop/Milestone_5/Updated_M5_Layers/dissolve_merge.shp" type="QString" name="val"/>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="C:/Users/User/Desktop/Milestone_5/Updated_M5_Layers/dissolve_merge.shp" name="val" type="QString"/>
         </Option>
       </Option>
     </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:mergevectorlayers_1:merged_protected">
+    <Option name="native:mergevectorlayers_1:merged_protected" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
         </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
         </Option>
       </Option>
     </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:union_1:union_protect">
+    <Option name="native:union_1:union_protect" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
         </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
         </Option>
       </Option>
     </Option>
@@ -413,56 +331,60 @@
   <Option name="groupBoxes"/>
   <Option name="help"/>
   <Option name="modelVariables"/>
-  <Option value="" type="QString" name="model_group"/>
-  <Option value="Priority" type="QString" name="model_name"/>
-  <Option type="Map" name="parameterDefinitions">
-    <Option type="Map" name="gdal:rasterize_1:priority_large_unfragmented_landscapes">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option value="priority_large_unfragmented_landscapes" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
+  <Option value="" name="model_group" type="QString"/>
+  <Option value="Priority large unfragmented areas" name="model_name" type="QString"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="ProtectedAreas" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option value="Protected areas" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="2" name="layer_type" type="int"/>
       <Option name="metadata"/>
-      <Option value="gdal:rasterize_1:priority_large_unfragmented_landscapes" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_non_file_outputs"/>
+      <Option value="0" name="min_inputs" type="int"/>
+      <Option value="ProtectedAreas" name="name" type="QString"/>
+      <Option value="multilayer" name="parameter_type" type="QString"/>
     </Option>
-    <Option type="Map" name="native:dissolve_1:protected_dissolved">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option value="-1" type="int" name="data_type"/>
-      <Option type="invalid" name="default"/>
-      <Option value="protected_dissolved" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
+    <Option name="VERBOSE_LOG" type="Map">
+      <Option value="false" name="default" type="bool"/>
+      <Option value="Verbose logging" name="description" type="QString"/>
+      <Option value="12" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="native:dissolve_1:protected_dissolved" type="QString" name="name"/>
-      <Option value="sink" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_append"/>
-      <Option value="true" type="bool" name="supports_non_file_outputs"/>
+      <Option value="VERBOSE_LOG" name="name" type="QString"/>
+      <Option value="boolean" name="parameter_type" type="QString"/>
     </Option>
-    <Option type="Map" name="native:mergevectorlayers_1:merged_protected">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option value="-1" type="int" name="data_type"/>
-      <Option type="invalid" name="default"/>
-      <Option value="merged_protected" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
+    <Option name="gdal:rasterize_1:Priority large unfragmented areas" type="Map">
+      <Option value="true" name="create_by_default" type="bool"/>
+      <Option name="default" type="invalid"/>
+      <Option value="Priority large unfragmented areas" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
       <Option name="metadata"/>
-      <Option value="native:mergevectorlayers_1:merged_protected" type="QString" name="name"/>
-      <Option value="sink" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_append"/>
-      <Option value="true" type="bool" name="supports_non_file_outputs"/>
-    </Option>
-    <Option type="Map" name="native:union_1:union_protect">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option value="-1" type="int" name="data_type"/>
-      <Option type="invalid" name="default"/>
-      <Option value="union_protect" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option name="metadata"/>
-      <Option value="native:union_1:union_protect" type="QString" name="name"/>
-      <Option value="sink" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_append"/>
-      <Option value="true" type="bool" name="supports_non_file_outputs"/>
+      <Option value="gdal:rasterize_1:Priority large unfragmented areas" name="name" type="QString"/>
+      <Option value="rasterDestination" name="parameter_type" type="QString"/>
+      <Option value="false" name="supports_non_file_outputs" type="bool"/>
     </Option>
   </Option>
   <Option name="parameterOrder"/>
-  <Option name="parameters"/>
+  <Option name="parameters" type="Map">
+    <Option name="ProtectedAreas" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="540" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ProtectedAreas" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="124" name="component_pos_x" type="double"/>
+      <Option value="400" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="ProtectedAreas" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+  </Option>
 </Option>
