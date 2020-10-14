@@ -1,0 +1,193 @@
+#Biophysical Diversity
+     g.region raster=30m_DEM -p
+     g.region res=1000 -ap
+     r.resamp.interp input=30m_DEM output=1000m_DEM \ method=nearest neighbor
+	  
+##Altitudinal heterogeneity  
+	 g.region -ap rast=1000m_DEM
+	  
+---Not sure if I should r.mask here and of r.mapcalc 
+---Used method as range because Holness used calculated the altitudinal difference based on the maximum and minimum values
+	  r.neighbors -c input=1000m_DEM output=altitudinal_heterogeneity size=7 method=range 
+	  
+---Computing quantiles
+     r.quantile input=altitudinal_heterogeneity percentiles=0.1,1,10,25,50,75,90,99,99.9
+	 
+---The output of r.quantile can be used for quantile classification
+     r.quantile altitudinal_heterogeneity quantiles=8 -r --quiet  r.recode altitudinal_heterogeneity \ out=altitude_quant8 rules=-
+	  
+##Precipitation Heterogeniety
+---Combined the monthly average rainfall raster maps using r.patch, in order to fill areas of "no data" 
+     g.region raster=gmednrfl1
+     r.patch input=gmednrfl1, gmednrfl1, gmednrfl2,gmednrfl3,gmednrfl4,gmednrfl5,gmednrfl6,gmednrfl7,gmednrfl8,gmednrfl9,gmednrfl10,gmednrfl11,gmednrfl12 output=precipitation
+
+---Masked the layer to the study area and remapled to 1km
+---The reampling created big black raster, so left it as is.
+     g.region -ap rast=precip_mask
+---Focal ananlysis
+	 r.neighbours -c input=precip_mask output=precipitation_heterogeity size=7 method=range
+	 
+---Computing quantiles
+     r.quantile input=precipitation_heterogeity percentiles=0.1,1,10,25,50,75,90,99,99.9
+	 
+---The output of r.quantile can be used for quantile classification
+     r.quantile precipitation_heterogeity quantiles=8 -r --quiet  r.recode precipitation_heterogeity \ out=precip_quant8 rules=-
+	 
+##Temperature Heterogeniety
+---Combined the monthly daily average temperature raster maps using r.patch, in order to fill areas of "no data" 
+     g.region raster=tmean01c
+     r.patch input=tmean01c, tmean02c, tmean03c,gtmean04c,tmean05c,tmean06c,tmean07c,tmean08c,tmean09c,tmean10c,tmean11c,tmean12c output=temperature
+	 
+---Masked the layer to the study area and remapled to 1km
+---The reampling created big black raster, so left it as is.
+     g.region -ap rast=temp_mask
+---Focal ananlysis
+	 r.neighbours -c input=temp_mask output=temperature_heterogeity size=7 method=range
+	 
+---Computing quantiles
+     r.quantile input=temperature_heterogeity percentiles=0.1,1,10,25,50,75,90,99,99.9
+	 
+---The output of r.quantile can be used for quantile classification
+     r.quantile temperature_heterogeity quantiles=8 -r --quiet  r.recode temperature_heterogeity \ out=temp_quant8 rules=-
+###Combining r.neighbor layers
+     r.mapcalc sum="(temperature_heterogeity + precipitation_heterogeity + altitudinal_heterogeneity)" output= biophysical_diversity
+
+#High Biotic Diversity
+---Clip South African Vegetation Map
+     v.clip -d input=vegetation_2018 clip=aoi_wbr output=vegetation_2018_clip
+	 
+##Biome Heterogeniety
+     g.region vector=vegetation_2018_clip -p
+	 db.describe -c table=vegetation_2018_clip
+	 v.to.rast input=vegetation_2018_clip output=biome_raster attribute_column=biome18 
+	  
+---Remapled to 1km 
+     g.region res=1000 -ap
+     r.resamp.interp input=biome_raster output=biome1000 \ method=nearest neighbor
+--Focal ananlysis
+     r.neighbours -c input=biome1000 output=biome_heterogeity size=7 method=diversity
+	 
+##Vegetation Group Heterogeniety
+     db.describe -c table=vegetation_2018_clip
+	 v.to.rast input=vegetation_2018_clip output=bioregion_raster attribute_column=brgnid18 
+	 
+---Remapled to 1km 
+     g.region res=1000 -ap
+     r.resamp.interp input=bioregion_raster_raster output=bioregion1000 \ method=nearest neighbor
+--Focal ananlysis
+     r.neighbours -c input=bioregion1000 output=vegetation_group_heterogeity size=7 method=diversity
+	 
+##Vegetation Type Heterogeniety
+     db.describe -c table=vegetation_2018_clip
+	 v.to.rast input=vegetation_2018_clip output=vegtype_raster attribute_column=veg18 
+	 
+	---(because the vegegation_2018 layer does not have a numerial code for each vegetation type, a new column was added to classifiy the vegetation types numerically)
+	----can run v.db.addcolumn
+	
+---Remapled to 1km 
+     g.region res=1000 -ap
+     r.resamp.interp input=vegtype_raster_raster output=vegtype1000 \ method=nearest neighbor
+	 
+---Focal ananlysis
+     r.neighbours -c input=vegtyp1000 output=vegetation_type_heterogeity size=7 method=diversity
+###combining r.neighbor layers
+     ---used raster calculator in QGIS to combine the layers
+	 vegetation_group_heterogeity + vegetation_type_heterogeity + biome_heterogeity
+	 
+	OR
+	  r.mapcalc sum="(vegetation_type_heterogeity + vegetation_group_heterogeity + biome_heterogeneity)" output= habitat_biodiversity
+	 
+ 
+
+#Priority Large Unfragmented Areas
+---Clip protected_areas, protected_areas_sa and npaes_focus_areas_completable
+     g.region vector=aoi_wbr
+	 v.clip -d input=protected_areas clip=aoi_wbr output=protected1_clip
+	 v.clip -d input=protected_areas_sa clip=aoi_wbr output=protected2_clip
+	 v.clip -d input=npaes_focus_areas_completable clip=aoi_wbr output=npaes_clip	 
+---Combining layers
+     v.patch input=protected1_clip,protected2_clip output=protected_patch
+	 v.patch input=protected_patch,npaes_clip output=priority_large_unfragmented_areas
+	 
+---Convert to rster
+     v.to.rast input=priority_large_unfragmented_areas type=area output=priority_unfragmented_rast use=attr attribute_column=cat res=90
+	 
+
+#Local Refugia
+##South Facing Slopes
+---Resmaple to 90m resolution
+      g.region raster=30m_DEM -p
+      g.region res=90 -ap
+      r.resamp.interp input=30m_DEM output=90m_DEM \ method=nearest neighbor
+	  
+---Slope and aspect calculations
+     g.region raster=90m_DEM -p
+	 r.slope.aspect elevation=90m_DEM slope=wbr_slope aspect=wbr_aspect 
+	 
+---Colours for the maps
+     r.colors -n map=wbr_slope color=sepia
+	 r.colors= map=wbr_aspect color=aspectcolr
+	 
+---Classifiying direction of aspect i.e. between 135 and 235 degrees (Raster calculator in QGIS)
+	----expression:
+	      wbr_aspect <= 135 OR wbr_aspect >= 235
+		  output= aspect_south at 90m resolution
+---Used QGIS to calculate the aspect for south facing slope and slope angle steeper than 15 and 10 degrees
+    ----expression:
+	     wbr_slope >= 10
+		 output = slope_10
+		 wbr_slope >= 15
+		 output = slope_15
+		 	
+---Combine raster layers
+     v.patch input=aspect_south, slope_10 output= south_facing
+---Sieved south_facing to remove areas under 25ha
+     used the GDAL seive tool
+	 OR
+	 r.area input= south_facing lesser=25 output=south_facing_sieved
+---Raster calculator 
+     ----expression: (south_facing_sieved <=0) =0 	 
+---Clipped river_500k to aoi_wbr extent
+---Rasterize rivers_500k_clipped to 90m
+     v.to.rast input=rivers_500k_clipped output=river_raster attribute_column=length
+
+---Focal ananlysis
+     r.neighbours -c input=river_raster output=river_neighbor size=7 method=maximum
+---Combine raster layers
+     v.patch input=river_neighbor_sieved, slope_15 output= kloof
+---Convert raster to vector
+     r.area input= kloof lesser=25 output=kloof_sieved
+---Raster calculator 
+     ----expression: (kloof_sieved <=0) =0
+	 output=
+###combine kloof_sieved and south_facing_sieved	 
+
+#Riparian Corridors
+---split the landcover layer using the raster calculator
+------Natural landcover
+     (lc_status = 1) * 1
+	 output=lc_natural
+------Degraded landcover
+     (lc_status = 2) * 1
+	 output=lc_degraded
+------Transformed landcover
+     (lc_status = 3) * 1
+	 output=lc_transformed
+
+---Filter river500k layer 
+     filterd 2nd order rvers and main rivers that flow in the Waterberg Disdtrict and Biosphere Reserve, i.e. Lephalala, Mokolo, Matlabas, Nyl and Mogalakwena
+---Buffer
+-----created 3 buffers, 10km, 5km and 1km
+     v.buffer input=rivers_filtered output=river10km type=line distance=10000
+	 v.buffer input=rivers_filtered output=river5km type=line distance=5000
+	 v.buffer input=rivers_filtered output=river1km type=line distance=1000
+---Rasterize buffers
+     v.to.rast input=river10km output=river_buf10 attribute_column=length 
+	 v.to.rast input=river5km output=river_buf5 attribute_column=length
+	 v.to.rast input=river1km output=river_buf1 attribute_column=length
+
+---Calculating cost surface using the raster calculator
+     (lc_natural = 1 AND river_buf10 = 1) * 10 + (lc_degraded = 1 AND river_buf5 = 1) * 2 + (lc_transformed = 1 AND river_buf1 = 1) * 1
+
+   
+	
