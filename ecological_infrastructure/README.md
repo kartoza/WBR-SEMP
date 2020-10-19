@@ -49,30 +49,31 @@ All 5 of the resulting composite layers, scored with values of 0-10, were then a
 
 This version of the ecological infrastructure modelling framework uses a raster-centric processing approach to replace the previously utilised vector-centric processing workflow. This addresses issues with processing speed and scalability. In addition, the cumulative scoring procedure was modified from the previous version.
 
+#### River buffers
+
+River buffers in the reference paper and workflow indicated only a mimimum and a maximum buffer region. As a result, the models were designed to utilise adjustable model variables. For the WBR SEMP EI calculations, these variables were designated according to an estimate natural jenks variance based on the river order attributes as follows:
+
+Standard riparean buffers:
+
+- 32m: Order 1
+- 50m: Order 2
+- 65m: Order 3
+- 80m: Order 4
+- 100m: Order 5
+
+SWSA riparean buffers:
+
+- 100m: Order 1
+- 200m: Order 2
+- 300m: Order 3
+- 400m: Order 4
+- 500m: Order 5
+
 #### Processing GOTCHAS
 
-The native raster calculation algorithm did not work in processing models. These were switched for the GDAL raster calculator. Initial evaluation of the maximum positions in raster overlays was attempted with the GDAL "build virtual raster" system, however some results were found to be inconsistent during quality assurance checks. Instead, the SAGA processing toolkit was used and will require the relevant environment configuration. The SAGA Mosaic tool was used for maximum cell value calculations, however this process requires a regular/ consistent grid cell size with a 1:1 aspect ratio. As the input landcover data had cells of 20x19.9994 in dimension, it had to be resampled to match the extents and cell size of generated and overlay rasters.
+The native raster calculation algorithm did not work in processing models. These were switched for the GDAL raster calculator. Initial evaluation of the maximum positions in raster overlays was attempted with the GDAL "build virtual raster" system, however some results were found to be inconsistent during quality assurance checks. Instead, the SAGA processing toolkit was used and will require the relevant environment configuration. The SAGA Mosaic tool was used for maximum cell value calculations, however this process requires a regular/ consistent grid cell size with a 1:1 aspect ratio. As the input landcover data had cells of 20x19.9994 in dimension, it had to be resampled to match the extents and cell size of generated and overlay rasters. NoData/ NaN values also caused issues where they would prevent the representation of intersecting cells. This resulted in only intersecting positive cells from all input rasters being calculated. This was resolved in the final models by using explicit No Data settings in various points of the workflow and a separate conversion process.
 
 The landcover status raster was resampled prior to the model operation using the `SAGA>>Raster Tools>>Resampling` tool with the following configuration:
 - Cellsize: 20.0 (Projected CRS with units in meters)
 - Downscaling: Nearest Neighbour
 - Upscaling: Mean Value (Cell Area Weighted)
-
-The area of interest layer is not extensively utilised in all models. It was included for the purpose of clipping the output rasters using the clip be vector mask, but in the troubleshooting of cumulative calculations this step was dropped to simplify the models and prevent errors.
-
-#### Output issues
-
-**NOTE: The cumulative ecological infrastructure raster output by ei calculation the model IS NOT CORRECT by default.** Somewhere in the workflow there seems to be an issue with "No Data" (the current form explicitly sets all 0 value cells to NODATA in the composite raster calculations, however this problem is introduced regardless of that particular setting and it is included so that we know what to expect on the other end of the outputs). In it's current form, the output only includes areas where the input rasters intersect each other and all areas which intersect "NODATA" are excluded from the output. This seems to persist through various forms of attempted resolution, including the native raster calculator, GDAL raster calculator and SAGA raster calculator, regardless of attempted formulae and settings to try and force the utilisation of the NODATA areas as 0 values.
-
-The workflow utilised for obtaining correct result is as follows:
-
-- Obtain the 5 cornerstone composite datasets (output in tif format).
-- Load the cornerstone data into QGIS and explicitly disable the No Data value option from the layer properties.
-- Create a new SAGA grid (sdat) for each dataset by exporting them with their own value using the calculation formula `a`. Ensure that the raster calculator is explicitly set to use the NODATA values.
-- Generate a 0 area grid by using any cornerstone layer as the input and using the raster calculation value of `0`.
-- Generate a cumulative SAGA grid with the calculation formula `a+b+c+d+e+f`.
-- Create a geotiff from the cumulative sdat and correct the values to desired range of 0-100 by using the QGIS native raster calculator and the formula `"layer@1"*2`.
-
-### Obtaining cornerstone composite datasets
-
-The cornerstone datasets with composite values can be obtained by specifying the outputs in the ei calculation model, which is currently configured to output only the cumulative ei result (for illustrative purposes).
