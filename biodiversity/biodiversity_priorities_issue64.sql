@@ -1,28 +1,5 @@
 --biodiversity priorities https://github.com/kartoza/WBR-SEMP/issues/64
 
---prep place names
-drop table geonames_wbr;
-create table geonames_wbr as
-select geonames.* from geonames join aoi_wbr on st_within(st_transform(aoi_wbr.geom,4326),geonames.geom);
-
-select count(*) from geonames
-
---AOI
-select st_astext(st_envelope(geom)) from aoi_wbr;
-select st_astext(st_envelope(st_transform(geom,32735))) from aoi_wbr;
-
-POLYGON((440045.789357581 7198576.94400535,440045.789357581 7516700.78214497,743041.376842405 7516700.78214497,743041.376842405 7198576.94400535,440045.789357581 7198576.94400535))
-((MINX, MINY), (MINX, MAXY), (MAXX, MAXY), (MAXX, MINY), (MINX, MINY))
-
-alter table aoi_wbr alter column geom type geometry(MultiPolygon,32735) using ST_transform(geom,32735);
-CREATE INDEX sidx_aoi_wbr_geom
-    ON aoi_wbr USING gist(geom);
-	
-CREATE TABLE aoi_wbr_singlepoly AS 
-    SELECT id, (ST_DUMP(geom)).geom::geometry(Polygon,32735) AS geom FROM aoi_wbr;
-CREATE INDEX sidx_aoi_wbr_singlepoly_geom
-    ON aoi_wbr_singlepoly USING gist(geom);
-
 --clip lc_status to aoi (lc_status_block was exported from GRASS)
 update lc_status_block set geom = st_makevalid(geom) where not st_isvalid(geom);
 update lc_status set geom = st_makevalid(geom) where not st_isvalid(geom);
@@ -383,7 +360,9 @@ CREATE TABLE polys_total AS
   SELECT nextval('polytotseq') AS id, 
          (ST_Dump(ST_Polygonize(geom))).geom AS geom
   FROM boundaries_total;
-  
+ 
+ alter table polys_total add primary key (id);
+ 
  CREATE INDEX sidx_polys_total_geom
     ON polys_total USING gist(geom);
 

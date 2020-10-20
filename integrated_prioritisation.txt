@@ -19,7 +19,14 @@ v.to.rast --overwrite input="biopoly@PERMANENT" layer="1" type="point,line,area"
 
 r.external --overwrite input="/data/WBR_SEMP/integrated-social-demand-index.tif" output="social"
 
-# setting a mask to exclude transformed areas (i.e. include natural and degraded)
+# import AOI for mask
+
+v.external input="PG:host=localhost user=gavin dbname=wbr" layer="aoi_w
+br" output="aoi"
+
+# setting a mask to first constrain to AOI and then to exclude transformed areas (i.e. include natural and degraded)
+
+r.mask --overwrite vector=aoi
 
 r.mask --overwrite raster=lc_status@PERMANENT maskcats=1 2
 
