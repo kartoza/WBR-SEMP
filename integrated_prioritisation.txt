@@ -1,0 +1,30 @@
+# steps used to combine output layers from each section into the integrated prioritisation layer
+
+# ecological infrastructure (from Charlie)
+
+r.external --overwrite input="/data/WBR_SEMP/cumulative_ecological_infrastructure.tif" output="ecological_infrastructure"
+
+# climate resilience (from Seabilwe)
+
+r.external --overwrite input="/data/WBR_SEMP/climate_change_resilience.tif" output="climate"
+
+# biodiversity priorities (from Gavin)
+
+v.in.ogr --overwrite -o input="PG:host=localhost user=gavin dbname=wbr"
+ layer="polys_total" output="biopoly" min_area=0.0001 type="" snap=-1
+
+v.to.rast --overwrite input="biopoly@PERMANENT" layer="1" type="point,line,area" output="biodiversity" use="attr" attribute_column="standard_score" value=1 memory=300
+
+# social resource dependency (from Admire)
+
+r.external --overwrite input="/data/WBR_SEMP/integrated-social-demand-index.tif" output="social"
+
+# setting a mask to exclude transformed areas (i.e. include natural and degraded)
+
+r.mask --overwrite raster=lc_status@PERMANENT maskcats=1 2
+
+# overall integrated prioritisation
+# if all inputs were properly spread over [1 100] I would not need to stretch. This was for 'version 1'
+
+r.mapcalc expression="composite = climate@PERMANENT + ecological_infrastructure@PERMANENT / 91 * 100 + 
+social@PERMANENT / 114 * 100 + biodiversity@PERMANENT" --overwrite
