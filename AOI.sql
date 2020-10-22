@@ -20,6 +20,25 @@ collection as (select st_multi(st_union(pc.geom,st_transform(dm.geom,4326)))::ge
 --dissolve into one AOI polygon
 select 1 id, st_union(geom) geom from collection;
 
+--AOI getting extents for GRASS region
+select st_astext(st_envelope(geom)) from aoi_wbr;
+select st_astext(st_envelope(st_transform(geom,32735))) from aoi_wbr;
+
+/*
+POLYGON((440045.789357581 7198576.94400535,440045.789357581 7516700.78214497,743041.376842405 7516700.78214497,743041.376842405 7198576.94400535,440045.789357581 7198576.94400535))
+((MINX, MINY), (MINX, MAXY), (MAXX, MAXY), (MAXX, MINY), (MINX, MINY))
+*/
+
+--prepping AOI for use as a mask in GRASS and for biodiversity overlay analysis in PostGIS
+
+alter table aoi_wbr alter column geom type geometry(MultiPolygon,32735) using ST_transform(geom,32735);
+CREATE INDEX sidx_aoi_wbr_geom
+    ON aoi_wbr USING gist(geom);
+	
+CREATE TABLE aoi_wbr_singlepoly AS 
+    SELECT id, (ST_DUMP(geom)).geom::geometry(Polygon,32735) AS geom FROM aoi_wbr;
+CREATE INDEX sidx_aoi_wbr_singlepoly_geom
+    ON aoi_wbr_singlepoly USING gist(geom);
 
 
 
