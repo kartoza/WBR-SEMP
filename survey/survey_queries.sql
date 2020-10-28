@@ -7,9 +7,13 @@ set geom = st_multi(st_intersection(st_buffer(st_centroid(sv.geom)::geography,50
 */
 
 --replace villages from mergin db
-truncate survey_villages;
-insert into survey_villages (id,geom,name,scoping_report_id,sample)
-(select id,geom,name,scoping_report_id,sample from survey_villages_mergin);
+--Seabilwe made occasional chagnes to survey_villages in context.gpkg in Mergin. These changes aren't under control of the agent to have to update the cloud table manually
+-- I opened context.gpkg in QGIS and used DB Manager to copy survey_villages to public schema in cloud db, then:
+truncate wbr_survey.survey_villages;
+insert into wbr_survey.survey_villages (id,geom,name,scoping_report_id,sample)
+(select id,geom,name,scoping_report_id,sample from public.survey_villages);
+
+drop table public.survey_villages;
 
 --once-off generate small buffers around villages (they were too big before)
 

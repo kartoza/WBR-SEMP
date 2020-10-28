@@ -1,6 +1,10 @@
 --preparing survey table for reporting
 set search_path to wbr_survey,public;
 
+select count(*) from sync_base.wbr;
+select count(*) from sync_main.wbr;
+select count(*) from wbr_survey.wbr_report;
+
 --REFRESH MATERIALIZED VIEW wbr_report;
 
 drop materialized view wbr_report;
