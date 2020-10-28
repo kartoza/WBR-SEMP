@@ -1,5 +1,5 @@
 --biodiversity priorities https://github.com/kartoza/WBR-SEMP/issues/64
-
+-- overlay technique derived from http://blog.cleverelephant.ca/2019/07/postgis-overlays.html
 --clip lc_status to aoi (lc_status_block was exported from GRASS)
 update lc_status_block set geom = st_makevalid(geom) where not st_isvalid(geom);
 update lc_status set geom = st_makevalid(geom) where not st_isvalid(geom);
@@ -116,8 +116,6 @@ CREATE INDEX sidx_aquaticcluster_geom
     ON aquaticcluster USING gist(geom);
 
   --strategic water source areas
-    --fix geometries first (they are crappy anyway - a few raster squares in the Waterberg????)
-update strategic_water_source_areas set geom = st_makevalid(geom) where not st_isvalid(geom);
 
 drop table swsa;
 create table swsa as
@@ -166,19 +164,13 @@ CREATE TABLE polys_aquatic AS
 CREATE INDEX sidx_polys_aquatic_geom
     ON polys_aquatic USING gist(geom);
 
-/* temp while LC clipping not working
-
-ALTER TABLE polys_aquatic ADD COLUMN score INTEGER DEFAULT 0;
-with topval as (select max(aggregate) top from polys_aquatic)
-UPDATE polys_aquatic set score = case when aggregate > 0 then log(aggregate)/log(topval.top)*5 else 0 end + max/2
-FROM topval;
-
-*/
 
 ALTER TABLE polys_aquatic ADD COLUMN max INTEGER DEFAULT 0;
-UPDATE polys_aquatic polys set max = p.max
+ALTER TABLE polys_aquatic ADD COLUMN aggregate INTEGER DEFAULT 0;
+
+UPDATE polys_aquatic polys set max = p.max, aggregate = p.sum
 FROM (
-  SELECT max(score) AS max, p.id AS id  
+  SELECT max(score) AS max, sum(score) as sum, p.id AS id  
   FROM polys_aquatic p 
   JOIN overlay_aquatic c 
   ON ST_Contains(c.geom, ST_PointOnSurface(p.geom)) 
@@ -187,6 +179,15 @@ FROM (
 WHERE p.id = polys.id;
 
    --composite2: aggregated without transformed
+
+/* temp while LC clipping not working
+
+ALTER TABLE polys_aquatic ADD COLUMN score INTEGER DEFAULT 0;
+with topval as (select max(aggregate) top from polys_aquatic)
+UPDATE polys_aquatic set score = case when aggregate > 0 then log(aggregate)/log(topval.top)*5 else 0 end + max/2
+FROM topval;
+
+*/
    
 drop table overlay_aquatic_untransformed;
 
@@ -231,6 +232,7 @@ CREATE INDEX sidx_polys_aquatic2_geom
     ON polys_aquatic2 USING gist(geom);
 
 ALTER TABLE polys_aquatic2 ADD COLUMN aggregate INTEGER DEFAULT 0;
+
 ***UPDATE polys_aquatic2 polys set aggregate = p.sum
 FROM (
   SELECT sum(score) as sum, p.id AS id  
