@@ -20,12 +20,12 @@ The models in the folder were used to calculate the Climate Change -Value for Su
 - DEM resampled to 90m.
 - Rivers clipped to proposed study area extent.
 
-#### Priority large unfragmented landscapes
+#### Large priority intact landscapes
 - Protected areas layer from SANBI.
 - Priority large unfragmented landscapes from SANBI.
 
-#### Centres of floristic endemism
-- The data has all species of plantae, and Holness identified vascular plant species endemic to the KNP region. The current data does not show which species are endemic and which are not.
+#### Intact centre of endemism
+- The data has all species of plantae, and Holness identified vascular plant species endemic to the KNP region. The current data provides areas a column classifying the types of vegetation found in the region as endemic and non-endemic.
 
 ## Description of Model
 To get the climate change resilience (ccr) output, 4 sub-models were designed to get the layers that will be combined to get the ccr layer. The intact centre of endemism and the large priority intact landscapes are the only two layers that were created without the use of a model.
