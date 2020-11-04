@@ -23,33 +23,7 @@
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rastercalculator_1" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="Reclassified biome">
-          <Option value="gdal:rastercalculator_1" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="Reclassified biome" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="201.25099206349205" type="double" name="component_pos_x"/>
-          <Option value="540.6367521367522" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Reclassified biome" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
       <Option type="Map" name="params">
@@ -98,7 +72,7 @@
         <Option type="List" name="FORMULA">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option value="A > 0" type="QString" name="static_value"/>
+            <Option value="&quot;(A > 0)&quot;" type="QString" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_A">
@@ -175,38 +149,12 @@
       </Option>
       <Option value="Reclassify bioregion neighbors" type="QString" name="component_description"/>
       <Option value="33" type="double" name="component_height"/>
-      <Option value="571.250992063492" type="double" name="component_pos_x"/>
-      <Option value="458.1367521367522" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="582.750992063492" type="double" name="component_pos_x"/>
+      <Option value="457.1367521367522" type="double" name="component_pos_y"/>
+      <Option value="219" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rastercalculator_2" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="Reclassified bioregion">
-          <Option value="gdal:rastercalculator_2" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="Reclassified bioregion" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="580.250992063492" type="double" name="component_pos_x"/>
-          <Option value="553.6367521367522" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Reclassified bioregion" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
       <Option type="Map" name="params">
@@ -255,7 +203,7 @@
         <Option type="List" name="FORMULA">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option value="A > 0" type="QString" name="static_value"/>
+            <Option value="&quot;(A > 0)&quot;" type="QString" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_A">
@@ -330,40 +278,14 @@
         <Option value="true" type="bool" name="outputs_collapsed"/>
         <Option value="true" type="bool" name="parameters_collapsed"/>
       </Option>
-      <Option value="Reclassify vegegtation neighbors" type="QString" name="component_description"/>
+      <Option value="Reclassify vegetation neighbors" type="QString" name="component_description"/>
       <Option value="33" type="double" name="component_height"/>
-      <Option value="991.250992063492" type="double" name="component_pos_x"/>
+      <Option value="1007.750992063492" type="double" name="component_pos_x"/>
       <Option value="458.1367521367522" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="233" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rastercalculator_3" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="Reclassified vegetation type">
-          <Option value="gdal:rastercalculator_3" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="Reclassified vegetation type" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="1095.250992063492" type="double" name="component_pos_x"/>
-          <Option value="548.6367521367522" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Reclassified vegetation type" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
       <Option type="Map" name="params">
@@ -412,7 +334,7 @@
         <Option type="List" name="FORMULA">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option value="A > 1" type="QString" name="static_value"/>
+            <Option value="&quot;(A > 1)&quot;" type="QString" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_A">
@@ -489,38 +411,12 @@
       </Option>
       <Option value="Combine the three reclassified layers" type="QString" name="component_description"/>
       <Option value="40" type="double" name="component_height"/>
-      <Option value="688.250992063492" type="double" name="component_pos_x"/>
-      <Option value="809.1367521367522" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
+      <Option value="738.750992063492" type="double" name="component_pos_x"/>
+      <Option value="813.1367521367522" type="double" name="component_pos_y"/>
+      <Option value="254.99999999999997" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rastercalculator_4" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="Habiat diversity">
-          <Option value="gdal:rastercalculator_4" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="Habiat diversity" type="QString" name="component_description"/>
-          <Option value="30" type="double" name="component_height"/>
-          <Option value="802.250992063492" type="double" name="component_pos_x"/>
-          <Option value="904.1367521367522" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Habiat diversity" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
       <Option type="Map" name="params">
@@ -569,7 +465,7 @@
         <Option type="List" name="FORMULA">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option value="A + B + C" type="QString" name="static_value"/>
+            <Option value="&quot;(A + B + C)&quot;" type="QString" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_A">
@@ -631,6 +527,163 @@
         </Option>
       </Option>
     </Option>
+    <Option type="Map" name="gdal:rastercalculator_5">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="gdal:rastercalculator" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="" type="QString" name="color"/>
+        <Option value="" type="QString" name="component_description"/>
+        <Option value="60" type="double" name="component_height"/>
+        <Option value="1427.750992063492" type="double" name="component_pos_x"/>
+        <Option value="868.1367521367522" type="double" name="component_pos_y"/>
+        <Option value="100" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="Get value to one" type="QString" name="component_description"/>
+      <Option value="30" type="double" name="component_height"/>
+      <Option value="884.750992063492" type="double" name="component_pos_x"/>
+      <Option value="964.1367521367522" type="double" name="component_pos_y"/>
+      <Option value="200" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="gdal:rastercalculator_5" type="QString" name="id"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="High biotic diversity">
+          <Option value="gdal:rastercalculator_5" type="QString" name="child_id"/>
+          <Option value="" type="QString" name="color"/>
+          <Option type="Map" name="comment">
+            <Option value="" type="QString" name="color"/>
+            <Option value="" type="QString" name="component_description"/>
+            <Option value="60" type="double" name="component_height"/>
+            <Option value="0" type="double" name="component_pos_x"/>
+            <Option value="0" type="double" name="component_pos_y"/>
+            <Option value="100" type="double" name="component_width"/>
+            <Option value="true" type="bool" name="outputs_collapsed"/>
+            <Option value="true" type="bool" name="parameters_collapsed"/>
+          </Option>
+          <Option value="High biotic diversity" type="QString" name="component_description"/>
+          <Option value="30" type="double" name="component_height"/>
+          <Option value="977.750992063492" type="double" name="component_pos_x"/>
+          <Option value="1053.1367521367522" type="double" name="component_pos_y"/>
+          <Option value="200" type="double" name="component_width"/>
+          <Option type="invalid" name="default_value"/>
+          <Option value="false" type="bool" name="mandatory"/>
+          <Option value="High biotic diversity" type="QString" name="name"/>
+          <Option value="OUTPUT" type="QString" name="output_name"/>
+          <Option value="true" type="bool" name="outputs_collapsed"/>
+          <Option value="true" type="bool" name="parameters_collapsed"/>
+        </Option>
+      </Option>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="BAND_A">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="1" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="BAND_B">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="BAND_C">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="BAND_D">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="BAND_E">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="BAND_F">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="&quot;(A>0)*1&quot;" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_A">
+          <Option type="Map">
+            <Option value="gdal:rastercalculator_4" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_B">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_C">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_D">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_E">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT_F">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NO_DATA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="RTYPE">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="5" type="int" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
     <Option type="Map" name="gdal:rasterize_1">
       <Option value="true" type="bool" name="active"/>
       <Option name="alg_config"/>
@@ -648,8 +701,8 @@
       </Option>
       <Option value="Rasterize biomes" type="QString" name="component_description"/>
       <Option value="30" type="double" name="component_height"/>
-      <Option value="306.25099206349205" type="double" name="component_pos_x"/>
-      <Option value="200.6367521367522" type="double" name="component_pos_y"/>
+      <Option value="298.25099206349205" type="double" name="component_pos_x"/>
+      <Option value="184.6367521367522" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rasterize_1" type="QString" name="id"/>
@@ -754,8 +807,8 @@
       </Option>
       <Option value="Rasterize bioregions" type="QString" name="component_description"/>
       <Option value="30" type="double" name="component_height"/>
-      <Option value="578.250992063492" type="double" name="component_pos_x"/>
-      <Option value="190.6367521367522" type="double" name="component_pos_y"/>
+      <Option value="591.250992063492" type="double" name="component_pos_x"/>
+      <Option value="183.6367521367522" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="gdal:rasterize_2" type="QString" name="id"/>
@@ -896,7 +949,7 @@
         <Option type="List" name="FIELD">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option value="veg_18" type="QString" name="static_value"/>
+            <Option value="vegid_18" type="QString" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="HEIGHT">
@@ -1376,8 +1429,8 @@
   <Option name="groupBoxes"/>
   <Option name="help"/>
   <Option name="modelVariables"/>
-  <Option value="" type="QString" name="model_group"/>
-  <Option value="Habitat diversity" type="QString" name="model_name"/>
+  <Option value="climate-change-resilience" type="QString" name="model_group"/>
+  <Option value="High biotic diversity" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
     <Option type="Map" name="VERBOSE_LOG">
       <Option value="false" type="bool" name="default"/>
@@ -1398,43 +1451,13 @@
       <Option value="VegetationMap" type="QString" name="name"/>
       <Option value="vector" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="gdal:rastercalculator_1:Reclassified biome">
+    <Option type="Map" name="gdal:rastercalculator_5:High biotic diversity">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option type="invalid" name="default"/>
-      <Option value="Reclassified biome" type="QString" name="description"/>
+      <Option value="High biotic diversity" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option name="metadata"/>
-      <Option value="gdal:rastercalculator_1:Reclassified biome" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_non_file_outputs"/>
-    </Option>
-    <Option type="Map" name="gdal:rastercalculator_2:Reclassified bioregion">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option value="Reclassified bioregion" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option name="metadata"/>
-      <Option value="gdal:rastercalculator_2:Reclassified bioregion" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_non_file_outputs"/>
-    </Option>
-    <Option type="Map" name="gdal:rastercalculator_3:Reclassified vegetation type">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option value="Reclassified vegetation type" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option name="metadata"/>
-      <Option value="gdal:rastercalculator_3:Reclassified vegetation type" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_non_file_outputs"/>
-    </Option>
-    <Option type="Map" name="gdal:rastercalculator_4:Habiat diversity">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option value="Habiat diversity" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option name="metadata"/>
-      <Option value="gdal:rastercalculator_4:Habiat diversity" type="QString" name="name"/>
+      <Option value="gdal:rastercalculator_5:High biotic diversity" type="QString" name="name"/>
       <Option value="rasterDestination" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="supports_non_file_outputs"/>
     </Option>

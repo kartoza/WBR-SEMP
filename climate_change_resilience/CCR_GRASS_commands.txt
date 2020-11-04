@@ -11,7 +11,7 @@
 	  r.neighbors -c input=1000m_DEM output=altitudinal_heterogeneity size=7 method=range 
 	  
 ---Computing quantiles
-     r.quantile input=altitudinal_heterogeneity percentiles=0.1,1,10,25,50,75,90,99,99.9
+     r.quantile input=altitudinal_heterogeneity percentiles=0.1,1,10,25,50,75,90
 	 
 ---The output of r.quantile can be used for quantile classification
      r.quantile altitudinal_heterogeneity quantiles=8 -r --quiet  r.recode altitudinal_heterogeneity \ out=altitude_quant8 rules=-
@@ -28,7 +28,7 @@
 	 r.neighbours -c input=precip_mask output=precipitation_heterogeity size=7 method=range
 	 
 ---Computing quantiles
-     r.quantile input=precipitation_heterogeity percentiles=0.1,1,10,25,50,75,90,99,99.9
+     r.quantile input=precipitation_heterogeity percentiles=0.1,1,10,25,50,75,90
 	 
 ---The output of r.quantile can be used for quantile classification
      r.quantile precipitation_heterogeity quantiles=8 -r --quiet  r.recode precipitation_heterogeity \ out=precip_quant8 rules=-
@@ -45,7 +45,7 @@
 	 r.neighbours -c input=temp_mask output=temperature_heterogeity size=7 method=range
 	 
 ---Computing quantiles
-     r.quantile input=temperature_heterogeity percentiles=0.1,1,10,25,50,75,90,99,99.9
+     r.quantile input=temperature_heterogeity percentiles=0.1,1,10,25,50,75,90
 	 
 ---The output of r.quantile can be used for quantile classification
      r.quantile temperature_heterogeity quantiles=8 -r --quiet  r.recode temperature_heterogeity \ out=temp_quant8 rules=-
@@ -162,32 +162,6 @@
 	 output=
 ###combine kloof_sieved and south_facing_sieved	 
 
-#Riparian Corridors
----split the landcover layer using the raster calculator
-------Natural landcover
-     (lc_status = 1) * 1
-	 output=lc_natural
-------Degraded landcover
-     (lc_status = 2) * 1
-	 output=lc_degraded
-------Transformed landcover
-     (lc_status = 3) * 1
-	 output=lc_transformed
-
----Filter river500k layer 
-     filterd 2nd order rvers and main rivers that flow in the Waterberg Disdtrict and Biosphere Reserve, i.e. Lephalala, Mokolo, Matlabas, Nyl and Mogalakwena
----Buffer
------created 3 buffers, 10km, 5km and 1km
-     v.buffer input=rivers_filtered output=river10km type=line distance=10000
-	 v.buffer input=rivers_filtered output=river5km type=line distance=5000
-	 v.buffer input=rivers_filtered output=river1km type=line distance=1000
----Rasterize buffers
-     v.to.rast input=river10km output=river_buf10 attribute_column=length 
-	 v.to.rast input=river5km output=river_buf5 attribute_column=length
-	 v.to.rast input=river1km output=river_buf1 attribute_column=length
-
----Calculating cost surface using the raster calculator
-     (lc_natural = 1 AND river_buf10 = 1) * 10 + (lc_degraded = 1 AND river_buf5 = 1) * 2 + (lc_transformed = 1 AND river_buf1 = 1) * 1
 
    
 	
