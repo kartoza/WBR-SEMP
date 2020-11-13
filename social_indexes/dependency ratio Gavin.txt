@@ -1,0 +1,25 @@
+Gavin's depenency ratio calculations in field calculator
+
+Ratio_employed =  "employed" /( "unemployed" + "dosicoraged_worker_seeker" + "not_economically_active" + "less_than_15" )
+
+ratio_inverse = 1/ratio_employed
+
+Score =
+
+case 
+when ratio_inverse < 1 then 0
+when ratio_inverse is null and employed = 0 and ( "unemployed" + "dosicoraged_worker_seeker" + "not_economically_active" + "less_than_15" ) = 0 then 0
+when ratio_inverse is null and employed = 0 and ( "unemployed" + "dosicoraged_worker_seeker" + "not_economically_active" + "less_than_15" ) > 0 then 10
+when ratio_inverse is null and employed > 0 then 0
+else (ratio_inverse - 1)/(maximum(ratio_inverse) - 1)*10
+end
+
+score_adjusted_by_area = 
+score/area
+
+score_adjusted = 
+score_adjusted_by_area/maximum(score_adjusted_by_area)*10
+
+this gives a nice quantile spread, whose classes you can reclassify 1-10
+
+

@@ -2,7 +2,7 @@ set search_path to wbr_survey,public;
 
 --got the 'WBR WASH Village Questionnaire 17 09 2020' spreadsheet from Lesiba / Richard
 --loaded in QGIS
---ran convert table to point layer tool
+--ran 'create point layer from table tool'
 --loaded into the WBR cloud DB
 
 --found three points with wrong X,Y order and sign
