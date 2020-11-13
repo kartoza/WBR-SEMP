@@ -34,7 +34,16 @@ from raw_ratios;
 
 drop table access_to_services;
 create table access_to_services as 
-select row_number() over () as id, st_multi(st_curvetoline(geom))::geometry(Multipolygon,32735) as geom, sp_code,pov_elec_access+pov_sani_access+pov_water_access+pov_refuse_access as access
+select st_multi(st_curvetoline(geom))::geometry(Multipolygon,32735) as geom, sp_code,pov_elec_access+pov_sani_access+pov_water_access+pov_refuse_access as access
 from poverty_of_access;
 
+ALTER TABLE public.access_to_services
+    ADD PRIMARY KEY (sp_code);
+	
+CREATE INDEX idx_access_to_services_gist_geom
+    ON public.access_to_services USING gist
+    (geom);
+
 select st_isvalidreason(geom) from access_to_services where not st_isvalid(geom);
+
+select distinct st_geometrytype(geom) from access_to_services
