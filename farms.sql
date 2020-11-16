@@ -11,11 +11,23 @@ select * from "Farm_portions" limit 1;
 
 drop table farmportions_new;
 create table farmportions_new as
-select fp.id, fea_layer, cityname,life_cycle, farmname, st_transform(fp.geom,32735)::geometry(Multipolygon,32735) as geom from "Farm_portions" fp join aoi_wbr aoi on st_intersects(st_transform(fp.geom,32735),aoi.geom);
+select fp.id, erven_id, parcel_tpe,fea_layer, fea_label,allotmntno, standno, portionno, suburbname, cityname,life_cycle, farmname, st_transform(fp.geom,32735)::geometry(Multipolygon,32735) as geom from "Farm_portions" fp join aoi_wbr aoi on st_intersects(st_transform(fp.geom,32735),aoi.geom);
 
 ALTER TABLE public.farmportions_new
     ADD PRIMARY KEY (id);
+
+CREATE SEQUENCE public.farmportions_new_id_seq
+    INCREMENT 1
+    START 1;
+
+select setval('farmportions_new_id_seq',(select max(id)+1 from farmportions_new));
+
+ALTER TABLE public.farmportions_new
+    ALTER COLUMN id SET DEFAULT nextval('farmportions_new_id_seq');
 	
+ALTER SEQUENCE farmportions_new_id_seq
+OWNED BY farmportions_new.id;
+
 CREATE INDEX idx_farmportions_new_gist_geom
     ON public.farmportions_new USING gist
     (geom);
@@ -61,7 +73,7 @@ alter table farmportions add column zone character varying(20);
 
 --you can start here to re-run all queries below
 update farmportions set zone=null;
-update farmportions set zone = 'buffer' where _mean > 100;
+update farmportions set zone = 'buffer' where _median > 73; --(also try mean, majority etc)
 update farmportions fp set zone = 'core' 
  from protected p
  where zone = 'buffer' and --st_intersects(fp.geom,p.geom);
@@ -121,6 +133,7 @@ with p as
 (select p.geom from protected p join farmportions fp on st_intersects(p.geom,fp.geom) where fp.zone is not null)
 update farmportions fp set zone = 'core' from p where st_within(st_centroid(fp.geom),p.geom);
 
+--ensure all core areas are surrounded by a buffer zone, i.e. add a a buffer to edge core areas. 
  
 --finally, reset all farm zones outside the limit to NULL 
 update farmportions fp set zone=null from wbr_limit lim where not st_intersects(fp.geom,lim.geom);
