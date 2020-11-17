@@ -11,7 +11,7 @@ protected as (select st_union(iba.geom,br.geom) geom from iba, sanbi.protected_a
 --pre-clip some catchments
 catchclip as (select st_difference(st_transform(dm.geom,4326),st_transform(st_force2d(catch.geom),4326)) geom from dwa.tertiary_catchment catch, mdb.district_municipalities dm where dm.municname = 'Waterberg' and catch.name in ('A32','A24')),
 --add clipped catchment back to the rest
-catchmerge as (select st_union(st_transform(st_force2d(catch.geom),4326),catchclip.geom) geom from catchclip,dwa.tertiary_catchment catch where catch.name IN ('A41','A42','A50','A61','A24','A63','A62')),
+catchmerge as (select st_union(st_transform(st_force2d(catch.geom),4326),catchclip.geom) geom from catchclip,dwa.tertiary_catchment catch where catch.name IN ('A41','A42','A50','A61','A63','A62')),
 --catchments minus any area covered by Vhembe BR
 catchments as (select st_difference(catchmerge.geom,br.geom) geom from catchmerge, sanbi.protected_area_sa br where br.name = 'Vhembe Biosphere Reserve'),
 --merge catchments and protected areas
@@ -31,7 +31,7 @@ POLYGON((440045.789357581 7198576.94400535,440045.789357581 7516700.78214497,743
 */
 
 --prepping AOI for use as a mask in GRASS and for biodiversity overlay analysis in PostGIS
-
+--run this on local db after renaming wbr_aoi to aoi_wbr
 alter table aoi_wbr alter column geom type geometry(MultiPolygon,32735) using ST_transform(geom,32735);
 CREATE INDEX sidx_aoi_wbr_geom
     ON aoi_wbr USING gist(geom);
