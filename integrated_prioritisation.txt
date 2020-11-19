@@ -34,6 +34,6 @@ v.external input="PG:host=localhost user=gavin dbname=wbr" layer="aoi_wbr" outpu
 r.mapcalc expression="composite = climate@PERMANENT + ecological_infrastructure@PERMANENT + social@PERMANENT + biodiversity@PERMANENT" --overwrite
 
 #Charlie's layer had nulls so used this to zero them on the fly
-r.mapcalc --overwrite expression=composite = round(climate@PERMANENT + if(isnull(ecological_infrastructure@PERMANENT),0, ecological_infrastructure@PERMANENT ) + social@PERMANENT + biodiversity@PERMANENT )
+r.mapcalc --overwrite expression=composite = round(climate@PERMANENT + if(isnull(ecological_infrastructure@PERMANENT),0,ecological_infrastructure@PERMANENT) + social@PERMANENT + biodiversity@PERMANENT)
 
 	
