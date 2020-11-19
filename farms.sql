@@ -137,3 +137,11 @@ update farmportions fp set zone = 'core' from p where st_within(st_centroid(fp.g
  
 --finally, reset all farm zones outside the limit to NULL 
 update farmportions fp set zone=null from wbr_limit lim where not st_intersects(fp.geom,lim.geom);
+
+--union zones
+--drop table wbr_boundary_milestone6;
+create table wbr_boundary_milestone6 as
+select row_number() over() as id, zone, st_union(geom)::geometry(Multipolygon,32735) from farmportions
+where zone is not null
+group by zone;
+
