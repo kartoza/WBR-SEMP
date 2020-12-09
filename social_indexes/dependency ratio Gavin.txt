@@ -1,4 +1,4 @@
-Gavin's depenency ratio calculations in field calculator
+Gavin's dependency ratio calculations in field calculator
 
 Ratio_employed =  "employed" /( "unemployed" + "dosicoraged_worker_seeker" + "not_economically_active" + "less_than_15" )
 
