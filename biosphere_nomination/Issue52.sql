@@ -1,5 +1,5 @@
 --overlay WBR zones with vegetation so we can report on vegetation types and areas per zone
---trying in PostGIS since geometry error make intersection fail in QGIS
+--trying in PostGIS since geometry errors make intersection fail in QGIS
 
 drop table overlay_veg;
 

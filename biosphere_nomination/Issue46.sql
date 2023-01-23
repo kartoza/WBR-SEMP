@@ -6,6 +6,11 @@ select name,(st_area(geom)/10000)::int as area_ha, source, owner as owner_or_typ
 order by name
 ;
 
+select name,(st_area(geom)/10000)::int as area_ha, source, owner as owner_or_type from core_protected_areas_2001
+order by name
+;
+
+
 --4.5b
 
 select erven_id,allotmntno,standno,portionno,suburbname,cityname,farmname,lc,round((st_area(geom)/10000)::numeric,2) area_ha from farmportions where zone = 'buffer' order by area_ha desc;

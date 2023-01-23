@@ -10,6 +10,6 @@ where zone is not null
 group by zone;
 
 --this is more accurate since farms already unioned
-select zone,sum(st_area(geom)/10000) over ()::int as total,(st_area(geom))/10000::int area from wbr_boundary_nov22
+select zone,sum(st_area(geom)/10000) over ()::int as total,((st_area(geom))/10000)::int area from wbr_boundary_nov22
 where zone is not null
 ;

@@ -245,5 +245,49 @@ CREATE INDEX idx_core_protected_areas_gist_geom
     ON public.core_protected_areas USING gist
     (geom);
 
+--repeat above but to get report on protected areas in the current (2001) core area
 
+drop table core_protected_areas_2001;
+create table core_protected_areas_2001 as
+with collection as
+(select geom, initcap(name) as name, 'CBA' as source, mgmt_agent as owner from "Waterberg_ProtectedAreas_2015_u35s"
+ union
+select st_transform(geom,32735) geom, focus_area as name, 'NPAES' as source, 'planned' as owner from npaes_focus_areas_completetable
+union
+select st_transform(geom,32735) geom, cur_nme as name, 'SANBI "protected_areas"' as source, site_type as owner from protected_areas
+union
+select st_transform(geom,32735) geom, cur_nme as name, 'DEFF "sapad_or_2020_q1"' as source, site_type as owner from sapad_or_2020_q1
+where cur_nme <> 'Fossil Hominid Sites of SA')
+select row_number() over () id, c.geom, c.name, c.source, c.owner from collection c join biosphere_reserves a on st_within(st_pointonsurface(c.geom),st_transform(a.geom,32735))
+where a.site_stype = 'BR - Core Area' and a.cur_nme = 'Waterberg Biosphere Reserve';
+
+--find dups
+
+--remove reserves with duplicate names (keeping the largest)
+--https://wiki.postgresql.org/wiki/Deleting_duplicates
+DELETE FROM core_protected_areas_2001
+WHERE id IN (
+    SELECT
+        id
+    FROM (
+        SELECT
+            id,
+            row_number() OVER w as rnum, name
+        FROM core_protected_areas_2001
+		where name <> 'Limpopo Central Bushveld'
+        WINDOW w AS (
+            PARTITION BY name
+            ORDER BY st_area(geom) DESC
+        ) 
+
+    ) t
+WHERE t.rnum > 1)
+;
+
+ALTER TABLE public.core_protected_areas_2001
+    ADD PRIMARY KEY (id);
+	
+CREATE INDEX idx_core_protected_areas_2001_gist_geom
+    ON public.core_protected_areas_2001 USING gist
+    (geom);
 
